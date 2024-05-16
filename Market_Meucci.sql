@@ -8,6 +8,7 @@ CREATE TABLE Località (
 CREATE TABLE Classe (
     id_classe INT PRIMARY KEY AUTO_INCREMENT,
     sezione VARCHAR(3),
+    classe VARCHAR(1),
     specialità VARCHAR(20)
 );
 
@@ -27,7 +28,6 @@ CREATE TABLE Utente (
     email VARCHAR(100),
     telefono VARCHAR(20),
     classe INT,
-    indirizzo VARCHAR(100),
     CAP VARCHAR(10),
     FOREIGN KEY (classe) REFERENCES Classe(id_classe),
     FOREIGN KEY (CAP) REFERENCES Località(CAP)
