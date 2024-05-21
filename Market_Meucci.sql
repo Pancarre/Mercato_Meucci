@@ -1,5 +1,5 @@
 -- Creazione della tabella Località
-CREATE TABLE Località (
+CREATE TABLE `Località` (
     CAP VARCHAR(10) PRIMARY KEY,
     citta VARCHAR(100)
 );
@@ -21,7 +21,7 @@ CREATE TABLE Categoria (
 
 -- Creazione della tabella Utente
 CREATE TABLE Utente (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     password VARCHAR(50) NOT NULL,
     eta INT,
@@ -30,7 +30,7 @@ CREATE TABLE Utente (
     classe INT,
     CAP VARCHAR(10),
     FOREIGN KEY (classe) REFERENCES Classe(id_classe),
-    FOREIGN KEY (CAP) REFERENCES Località(CAP)
+    FOREIGN KEY (CAP) REFERENCES `Località`(CAP)
 );
 
 -- Creazione della tabella Annuncio
