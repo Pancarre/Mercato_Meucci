@@ -1,16 +1,70 @@
 -- Creazione della tabella Località
 CREATE TABLE `Località` (
     CAP VARCHAR(10) PRIMARY KEY,
-    citta VARCHAR(100)
+    citta VARCHAR(100),
+    indirizzo VARCHAR(100)
 );
+
+INSERT INTO Località (CAP, citta, indirizzo) VALUES 
+('50121', 'Firenze', 'Via Roma, 1'),
+('50122', 'Firenze', 'Via Tornabuoni, 2'),
+('50123', 'Firenze', 'Piazza Duomo, 3'),
+('50124', 'Firenze', 'Lungarno Vespucci, 4'),
+('50125', 'Firenze', 'Piazza della Signoria, 5'),
+('56121', 'Pisa', 'Via Santa Maria, 6'),
+('56122', 'Pisa', 'Lungarno Pacinotti, 7'),
+('57121', 'Livorno', 'Via Grande, 8'),
+('57122', 'Livorno', 'Piazza della Repubblica, 9'),
+('58100', 'Grosseto', 'Corso Carducci, 10'),
+('59100', 'Prato', 'Via Mazzini, 11'),
+('51100', 'Pistoia', 'Via della Madonna, 12'),
+('52100', 'Arezzo', 'Corso Italia, 13'),
+('53036', 'Poggibonsi', 'Via della Repubblica, 14'),
+('52025', 'Montevarchi', 'Via Roma, 15'),
+('54033', 'Carrara', 'Via Carriona, 16'),
+('55049', 'Viareggio', 'Passeggiata Marconi, 17'),
+('55100', 'Lucca', 'Via Fillungo, 18'),
+('53043', 'Chiusi', 'Piazza Duomo, 19'),
+('53045', 'Montepulciano', 'Via di Voltaia, 20'),
+('53047', 'Sarteano', 'Via del Teatro, 21'),
+('53048', 'Sinalunga', 'Via Trento, 22'),
+('53041', 'Asciano', 'Via Roma, 23'),
+('53042', 'Chianciano Terme', 'Viale della Libertà, 24'),
+('53040', 'Rapolano Terme', 'Via Terme San Giovanni, 25');
 
 -- Creazione della tabella Classe
 CREATE TABLE Classe (
     id_classe INT PRIMARY KEY AUTO_INCREMENT,
-    sezione VARCHAR(3),
-    classe VARCHAR(1),
+    classe VARCHAR(2),
     specialità VARCHAR(20)
 );
+
+INSERT INTO Classe (sezione, classe, specialità) VALUES 
+('A', '1', 'Elettronica e elettrotecnica'),
+('A', '2', 'Elettronica e elettrotecnica'),
+('A', '3', 'Informatica e telecomunicazione'),
+('A', '4', 'Meccanica e Logistica'),
+('A', '5', 'Informatica e telecomunicazione'),
+('B', '1', 'Meccanica e Logistica'),
+('B', '2', 'Elettronica e elettrotecnica'),
+('B', '3', 'Informatica e telecomunicazione'),
+('B', '4', 'Elettronica e elettrotecnica'),
+('B', '5', 'Meccanica e Logistica'),
+('C', '1', 'Informatica e telecomunicazione'),
+('C', '2', 'Meccanica e Logistica'),
+('C', '3', 'Elettronica e elettrotecnica'),
+('C', '4', 'Informatica e telecomunicazione'),
+('C', '5', 'Meccanica e Logistica'),
+('D', '1', 'Elettronica e elettrotecnica'),
+('D', '2', 'Informatica e telecomunicazione'),
+('D', '3', 'Meccanica e Logistica'),
+('D', '4', 'Elettronica e elettrotecnica'),
+('D', '5', 'Informatica e telecomunicazione'),
+('E', '1', 'Meccanica e Logistica'),
+('E', '2', 'Elettronica e elettrotecnica'),
+('E', '3', 'Informatica e telecomunicazione'),
+('E', '4', 'Meccanica e Logistica'),
+('E', '5', 'Elettronica e elettrotecnica');
 
 -- Creazione della tabella Categoria
 CREATE TABLE Categoria (
