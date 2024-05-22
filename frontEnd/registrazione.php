@@ -38,9 +38,9 @@
                     <span>Classe:</span>
                     <input type="text" placeholder="Classe" name="classe" required><br>
                     <span>CAP:</span>
-                    <input type="text" placeholder="cap" name="classe" required><br>
+                    <input type="text" placeholder="cap" name="CAP" required><br>
                     <span>Indirizzo:</span>
-                    <input type="text" placeholder="indirizzo" name="classe" required><br>
+                    <input type="text" placeholder="indirizzo" name="Indirizzo" required><br>
                     <br>
                     <input type="submit">
 
@@ -58,8 +58,7 @@
 
             </div>
         </div>
-        
-        <div class="row"></div>
+
 
     </div>
 

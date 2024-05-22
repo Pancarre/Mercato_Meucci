@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";     // Di default quando si installa XAMPP la password è vuota
-    $dbname = "marketmeucci"; // Qui bisogna cambiare con il nome del database presente su phpMyAdmin
+    $dbname = "mercato_meucci"; // Qui bisogna cambiare con il nome del database presente su phpMyAdmin
 
     mysqli_report(MYSQLI_REPORT_OFF);   // Serve a disabilitare le eccezioni nelle nuove versioni di PHP
 
