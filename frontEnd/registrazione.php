@@ -23,7 +23,7 @@
 
 
                 <img id="meucci_logo" src="./img/logo---itis-meucci---firenze.png" alt="logo meucci">
-                <form action="./scriptregistrazione.php" method="post">
+                <form action="../backEnd/scriptregistrazione.php" method="post">
                     <h1>Registrazione</h1>
                     <span>Username:</span>
                     <input type="text" placeholder="Username" name="username" required><br>
@@ -38,9 +38,9 @@
                     <span>Classe:</span>
                     <input type="text" placeholder="Classe" name="classe" required><br>
                     <span>CAP:</span>
-                    <input type="text" placeholder="cap" name="CAP" required><br>
+                    <input type="text" placeholder="cap" name="cap" required><br>
                     <span>Indirizzo:</span>
-                    <input type="text" placeholder="indirizzo" name="Indirizzo" required><br>
+                    <input type="text" placeholder="indirizzo" name="indirizzo" required><br>
                     <br>
                     <input type="submit">
 

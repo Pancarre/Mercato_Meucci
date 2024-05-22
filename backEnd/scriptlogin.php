@@ -29,24 +29,24 @@ if($username != null && $password != null){
         if($password === $dbPassword){
             // Se la password è corretta, faccio il redirect
             $_SESSION["username"] = $username;
-            header("Location: home.html");
+            header("Location: ../frontEnd/home.php");
         } else {
             // Se la password non è corretta, faccio il redirect
             $_SESSION["errore"] = "Email o password sbagliata";
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
 
     } else {
         // Se l'utente non esiste, faccio il redirect
         $_SESSION["errore"] = "Utente non trovato";
-        header("Location: index.php");
+        header("Location: ../index.php");
     }
 
 
 
 } else {
     $_SESSION["errore"] = "Compila tutti i campi!!";
-    header("Location: index.php");
+    header("Location: ../index.php");
 }
 
 

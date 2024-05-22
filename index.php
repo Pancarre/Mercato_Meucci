@@ -34,7 +34,7 @@
 
                 <div>
 
-                    <a href="Registrazione.html">
+                    <a href="./frontEnd/registrazione.php">
 
                         <span>non sei registrato?</span>
                         <span class="material-symbols-outlined">

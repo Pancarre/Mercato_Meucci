@@ -53,9 +53,13 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizz
 
     $sql = "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
     $result = $conn->query($sql);
-    if($result->num_rows > 0) {
+    
+
+
+    if($result) {
+        echo 'Nome o email gia esistente';
         $_SESSION['error'] = 'Nome o email gia esistente';
-        header('Location: registrazione.php');
+    //    header('Location: ../registrazione.php');
 
     }
 
@@ -63,22 +67,27 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizz
 
     $hashPassword = hash("sha256", $password);
 
-    $sql = "INSERT INTO utente(username, password, eta, email, telefono, classe, indirizzo, cap) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$classe', '$indirizzo', '$cap')";
+    //TO DO: GESTIRE ID CLASSE, invece di 5C devo mettere il suo id
+
+    $sql = "INSERT INTO utente(username, password, eta, email, telefono, classe, cap) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$classe',  '$cap')";
     $result = $conn->query($sql);
 
 
     if($result){
+        echo 'Registrazione avvenuta con successo';
         $_SESSION['username'] = $username;
-        header('Location: home.html');
+     //   header('Location: ../frontEnd/home.php');
   
     } else {
+        echo 'Errore durante la registrazione';
         $_SESSION['error'] = 'Errore durante la registrazione';
-        header('Location: registrazione.php');
+     //   header('Location: ../registrazione.php');
     }
 
 } else {
+    echo 'Non sono stati inseriti tutti i campi';
     $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
-    header('Location: registrazione.php');
+  //  header('Location: ../registrazione.php');
 }
 
 
