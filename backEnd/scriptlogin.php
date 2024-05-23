@@ -13,6 +13,8 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     $password = hash("sha256",$_POST["password"]);
 }
 
+
+
 if($username != null && $password != null){
     
    
@@ -32,7 +34,7 @@ if($username != null && $password != null){
             header("Location: ../frontEnd/home.php");
         } else {
             // Se la password non è corretta, faccio il redirect
-            $_SESSION["errore"] = "Email o password sbagliata";
+            $_SESSION["errore"] = "username o password sbagliata";
             header("Location: ../index.php");
         }
 

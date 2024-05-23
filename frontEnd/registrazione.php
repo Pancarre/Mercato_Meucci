@@ -37,16 +37,24 @@
                     <input type="tel" placeholder="Telefono" name="telefono" required><br>
                     <span>Classe:</span>
                     <input type="text" placeholder="Classe" name="classe" required><br>
+                    <span>Specializzazione:</span>
+                    <select name="specialità">
+                        <option value="">Seleziona una specialità</option>
+                        <option value="Informatica">Informatica e telecomunicazione</option>
+                        <option value="Elettronica">Elettronica e elettrotecnica</option>
+                        <option value="Meccanica">Meccanica</option>
+                        <option value="Logistica">Logistica</option>
+                    </select> 
+                    <br>
                     <span>CAP:</span>
                     <input type="text" placeholder="cap" name="cap" required><br>
                     <span>Indirizzo:</span>
                     <input type="text" placeholder="indirizzo" name="indirizzo" required><br>
                     <br>
                     <input type="submit">
-
                 </form>
                 <div>
-                    <a href="index.html">
+                    <a href="../index.php">
                         <span class="material-symbols-outlined">
                         login
                         </span>

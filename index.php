@@ -21,7 +21,7 @@
 
 
                 <img id="meucci_logo" src="./img/logo---itis-meucci---firenze.png" alt="logo meucci">
-                <form action="scriptlogin.php" method="post">
+                <form action="./backEnd/scriptlogin.php" method="post">
                     <h1>Login</h1>
                     <span>Username</span>
                     <input type="text" placeholder="username" name="username" required><br>

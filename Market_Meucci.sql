@@ -36,35 +36,36 @@ INSERT INTO Località (CAP, citta, indirizzo) VALUES
 CREATE TABLE Classe (
     id_classe INT PRIMARY KEY AUTO_INCREMENT,
     classe VARCHAR(2),
-    specialità VARCHAR(20)
+    specialità VARCHAR(50)
 );
 
 INSERT INTO Classe (classe, specialità) VALUES 
 ('1A', 'Elettronica e elettrotecnica'),
 ('2A', 'Elettronica e elettrotecnica'),
 ('3A', 'Informatica e telecomunicazione'),
-('4A', 'Meccanica e Logistica'),
+('4A', 'Meccanica'),
 ('5A', 'Informatica e telecomunicazione'),
-('1B', 'Meccanica e Logistica'),
+('1B', 'Meccanica'),
 ('2B', 'Elettronica e elettrotecnica'),
 ('3B', 'Informatica e telecomunicazione'),
 ('4B', 'Elettronica e elettrotecnica'),
-('5B', 'Meccanica e Logistica'),
+('5B', 'Logistica'),
 ('1C', 'Informatica e telecomunicazione'),
-('2C', 'Meccanica e Logistica'),
+('2C', 'Logistica'),
 ('3C', 'Elettronica e elettrotecnica'),
 ('4C', 'Informatica e telecomunicazione'),
-('5C', 'Meccanica e Logistica'),
+('5C', 'Meccanica'),
 ('1D', 'Elettronica e elettrotecnica'),
 ('2D', 'Informatica e telecomunicazione'),
-('3D', 'Meccanica e Logistica'),
+('3D', 'Meccanica'),
 ('4D', 'Elettronica e elettrotecnica'),
 ('5D', 'Informatica e telecomunicazione'),
-('1E', 'Meccanica e Logistica'),
+('1E', 'Logistica'),
 ('2E', 'Elettronica e elettrotecnica'),
 ('3E', 'Informatica e telecomunicazione'),
-('4E', 'Meccanica e Logistica'),
+('4E', 'Meccanica'),
 ('5E', 'Elettronica e elettrotecnica');
+
 
 -- Creazione della tabella Categoria
 CREATE TABLE Categoria (
@@ -77,7 +78,7 @@ CREATE TABLE Categoria (
 CREATE TABLE Utente (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     eta INT,
     email VARCHAR(100),
     telefono VARCHAR(20),

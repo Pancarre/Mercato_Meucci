@@ -10,6 +10,7 @@ $eta = null;
 $email = null;
 $telefono = null;
 $classe = null;
+$specialità = null;
 $indirizzo = null;
 $cap = null;
 
@@ -38,11 +39,14 @@ if(isset($_POST['indirizzo'])) {
 if(isset($_POST['cap'])) {
     $cap = $_POST['cap'];
 }
+if(isset($_POST['specialità'])) {
+    $specialità = $_POST['specialità'];
+}
 
 
-function isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizzo, $cap) {
+function isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizzo, $cap,$specialità) {
 
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $indirizzo != null && $cap != null) {
+    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $indirizzo != null && $cap != null && $specialità != null) {
         return true;
     }
 
@@ -59,7 +63,7 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizz
     if($result) {
         echo 'Nome o email gia esistente';
         $_SESSION['error'] = 'Nome o email gia esistente';
-    //    header('Location: ../registrazione.php');
+        header('Location: ../frontEnd/registrazione.php');
 
     }
 
@@ -67,27 +71,43 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizz
 
     $hashPassword = hash("sha256", $password);
 
-    //TO DO: GESTIRE ID CLASSE, invece di 5C devo mettere il suo id
 
-    $sql = "INSERT INTO utente(username, password, eta, email, telefono, classe, cap) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$classe',  '$cap')";
+    // Controllo che la classe esista
+    $sql = "SELECT id_classe FROM classe WHERE classe = '$classe' AND specialità = '$specialità'";
+    $result = $conn->query($sql);
+
+    // Se la classe esiste
+    if($result) {
+        $row = $result->fetch_assoc();
+        $id_classe = $row['id_classe'];
+    } else {
+        echo 'Classe non trovata o Sezione sbagliata';
+        $_SESSION['error'] = 'Classe non trovata o Sezione sbagliata';
+        header('Location: ../frontEnd/registrazione.php');
+    }
+
+
+
+    // Inserimento dell'utente
+    $sql = "INSERT INTO utente(username, password, eta, email, telefono, id_classe, cap) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$id_classe',  '$cap')";
     $result = $conn->query($sql);
 
 
     if($result){
         echo 'Registrazione avvenuta con successo';
         $_SESSION['username'] = $username;
-     //   header('Location: ../frontEnd/home.php');
+       header('Location: ../frontEnd/home.php');
   
     } else {
         echo 'Errore durante la registrazione';
         $_SESSION['error'] = 'Errore durante la registrazione';
-     //   header('Location: ../registrazione.php');
+        header('Location: ../frontEnd/registrazione.php');
     }
 
 } else {
     echo 'Non sono stati inseriti tutti i campi';
     $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
-  //  header('Location: ../registrazione.php');
+    header('Location: ../frontEnd/registrazione.php');
 }
 
 
