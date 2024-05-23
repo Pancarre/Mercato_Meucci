@@ -1,4 +1,7 @@
 <?php
+
+
+
     $servername = "localhost";
     $username = "root";
     $password = "";     // Di default quando si installa XAMPP la password è vuota

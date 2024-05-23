@@ -40,8 +40,8 @@
                     <span>Specializzazione:</span>
                     <select name="specialità">
                         <option value="">Seleziona una specialità</option>
-                        <option value="Informatica">Informatica e telecomunicazione</option>
-                        <option value="Elettronica">Elettronica e elettrotecnica</option>
+                        <option value="Informatica e telecomunicazione">Informatica e telecomunicazione</option>
+                        <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                         <option value="Meccanica">Meccanica</option>
                         <option value="Logistica">Logistica</option>
                     </select> 

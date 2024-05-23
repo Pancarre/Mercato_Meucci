@@ -1,3 +1,9 @@
+<?php
+include "../backEnd/check_session.php";
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,8 @@
     <title>Meucci Market</title>
 </head>
 <body>
+
+    <a href="../backEnd/logout.php">Logout</a><br>
 
 
 

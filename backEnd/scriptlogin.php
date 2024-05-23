@@ -1,7 +1,6 @@
 <?php
 
 include "connessione.php";
-
 session_start();
 
 $username = null;
@@ -35,20 +34,23 @@ if($username != null && $password != null){
         } else {
             // Se la password non è corretta, faccio il redirect
             $_SESSION["errore"] = "username o password sbagliata";
-            header("Location: ../index.php");
+            echo "username o password sbagliata";
+    //        header("Location: ../index.php");
         }
 
     } else {
         // Se l'utente non esiste, faccio il redirect
         $_SESSION["errore"] = "Utente non trovato";
-        header("Location: ../index.php");
+        echo "Utente non trovato";
+   //     header("Location: ../index.php");
     }
 
 
 
 } else {
     $_SESSION["errore"] = "Compila tutti i campi!!";
-    header("Location: ../index.php");
+    echo "Compila tutti i campi!!";
+ //   header("Location: ../index.php");
 }
 
 
