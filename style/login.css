@@ -1,12 +1,45 @@
-#meucci_logo{
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevenire lo scroll orizzontale */
+    overflow-y: hidden;
+    background-image: url('../img/body.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-size: cover; /* Adatta l'immagine per coprire tutto lo sfondo */
+    background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
+    background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scorrimento */
+    background-position: center; /* Centra l'immagine di sfondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#main-row {
+    height: 100%;
+    width: 100%;
+}
+
+#main-col {
+    padding-left: 5%;
+    padding-top: 3%;
+    background-color: white;
+    min-height: 100%;
+}
+
+.custom-form-width {
+    max-width: 400px; /* Imposta la larghezza massima del form */
+}
+
+#meucci_logo {
     width: 80px;
     height: 80px;
-    text-align: center;
-
-}
-#main{
-
-    border: 2px solid black;
-
+    margin-left: auto;
+    margin-right: auto;
 }
