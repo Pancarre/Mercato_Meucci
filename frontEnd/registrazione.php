@@ -12,7 +12,17 @@
     <div class="container-fluid" id="main">
 
         <div class="row" id="main-row">
-            <div class="col">
+            <div id="sub" class="col">
+
+                <div id="sub-main">
+
+                    <h1>Hai già un'account?</h1>
+                    <a href="../index.php">
+
+                        <button type="button" class="btn btn-primary">Fai Login</button>
+                        
+                    </a>
+                </div>
 
             </div>
             <div class="border col" id="main-col">
@@ -23,16 +33,14 @@
 
                 <h1 class="mt-5">Registrazione</h1>
 
-                <form class="mt-5 mb-5  custom-form" action="./backEnd/scriptlogin.php" method="post">
+                <form class="mt-5 mb-5  custom-form" action="../backEnd/scriptlogin.php" method="post">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" name="password" placeholder="Password" >
                     </div>
-                    <div class="mb-3">
-                        <input type="number" class="form-control" name="eta" placeholder="Età">
-                    </div>
+                    
                     <div container-fluid>
                         <div class="row">
                             <div class="mb-3 col-6">
@@ -43,10 +51,25 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="classe" placeholder="Classe">
+                        <input type="number" class="form-control" name="eta" placeholder="Età">
                     </div>
+                    <div container-fluid>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <input type="text" class="form-control" name="classe" placeholder="Classe">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <select class="form-select" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div container-fluid>
                         <div class="row">
                             <div class="mb-3 col-6">
@@ -75,19 +98,6 @@
 
 
                 </form>
-
-                <div class="mb-5">
-                    <span>hai già account?</span>
-                    <a href="../index.php">
-
-                    <button type="button" class="btn btn-primary">Login</button>
-
-                    
-                    
-                    </a>
-
-                </div>
-                
 
             </div>
 

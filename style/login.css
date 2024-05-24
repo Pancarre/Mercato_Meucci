@@ -4,7 +4,8 @@ body {
     height: 100%;
     overflow-x: hidden; /* Prevenire lo scroll orizzontale */
     overflow-y: hidden;
-    background-image: url('../img/backgroud-image.png'); /* Sostituisci con il percorso della tua immagine */
+    background-image: url('../img/body.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-color: rgba(0, 0, 0, 10000);
     background-size: cover; /* Adatta l'immagine per coprire tutto lo sfondo */
     background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
     background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scorrimento */
@@ -46,5 +47,24 @@ body {
 #button-login{
 
     width: 100%;
+
+}
+
+#sub{
+
+    display: flex;
+    justify-content: center; /* Allinea il contenuto orizzontalmente al centro */
+    align-items: center; /* Allinea il contenuto verticalmente al centro */
+    width: 100%; /* Imposta la larghezza del div esterno */
+    height: 100vh; /* Imposta l'altezza del div esterno */
+}
+
+
+#sub-main{
+    color: white;
+    display: flex;
+    flex-direction: column; /* Imposta il layout in colonna */
+    align-items: center; /* Allinea il contenuto delle colonne al centro */
+    /* Puoi aggiungere stili aggiuntivi al div centrato qui */
 
 }
