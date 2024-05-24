@@ -57,9 +57,11 @@ include "../backEnd/check_session.php";
             if($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     echo "<div>";
+                    echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
                     echo "<img src='" . $row["image"] . "' width='100px'>";
                     echo "<p>" . $row["nome"] . "</p>";
                     echo "<p>" . $row["username"] . "</p>";
+                    echo "</a>";
                     echo "</div>";
                 }
             } else {

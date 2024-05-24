@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    <button id="button-login" type="submit" class="btn btn-primary mb-5">login</button>
+                    <button id="button-login" type="submit" class="btn btn-primary mb-5">Registrati</button>
 
                     <?php
 
