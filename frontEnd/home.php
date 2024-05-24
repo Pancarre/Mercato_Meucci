@@ -17,6 +17,7 @@ include "../backEnd/check_session.php";
 
     <a href="../backEnd/logout.php">Logout</a><br>
     <a href="./inserisciFile.php">Inserisci file</a><br>
+    <a href="./storicoAnnunci.php">Storico Annunci</a><br>
 
 
 
