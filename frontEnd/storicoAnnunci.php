@@ -31,12 +31,17 @@ include "../backEnd/check_session.php";
     
         // Creazione degli annunci
         if($result->num_rows > 0) {
-            echo "<div>";
+            
             while($row = $result->fetch_assoc()) {
+                echo "<div>";
                 echo "<img src='" . $row["image"] . "' width='50px'>";	
                 echo "<p>" . $row["nome"] . "</p>";
-            }
-            echo "</div>";
+                echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
+                echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+                echo "<input type='submit' value='Visualizza proposte'>";
+                echo "</form>";
+                echo "</div>";
+            }          
     
         } else {
             $_SESSION["error"] = "errore: nessun annuncio trovato";

@@ -14,6 +14,10 @@ include "../backEnd/check_session.php";
 </head>
 <body>
 
+    <?php
+        echo "Sei entrato come: " . $_SESSION["username"] . "<br><br>";    
+    ?>
+
     <a href="../backEnd/logout.php">Logout</a><br>
     <a href="./inserisciFile.php">Inserisci file</a><br>
     <a href="./storicoAnnunci.php">Storico Annunci</a><br>
@@ -34,6 +38,10 @@ include "../backEnd/check_session.php";
     </div>
 
     <?php
+
+        
+
+
         // Prendo l'id dell'utente loggato
         $username = $_SESSION["username"];
         $sql = "SELECT id FROM utente WHERE username = '$username'";
