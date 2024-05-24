@@ -25,11 +25,11 @@
                 <form class="mt-5 mb-5  custom-form-width" action="./backEnd/scriptlogin.php" method="post">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" aria-describedby="emailHelp" name="username">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" >
+                        <input type="password" class="form-control" name="password" >
                     </div>
                     <button type="submit" class="btn btn-primary mb-5">Submit</button>
 
