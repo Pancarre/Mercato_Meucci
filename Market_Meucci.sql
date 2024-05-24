@@ -91,6 +91,7 @@ CREATE TABLE Utente (
     telefono VARCHAR(20),
     id_classe INT,
     CAP VARCHAR(10),
+
     FOREIGN KEY (id_classe) REFERENCES Classe(id_classe),
     FOREIGN KEY (CAP) REFERENCES `Località`(CAP)
 );
@@ -104,6 +105,7 @@ CREATE TABLE Annuncio (
     stato_di_disponibilità VARCHAR(50),
     id_utente INT,
     id_categoria INT,
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_utente) REFERENCES Utente(id) ON DELETE CASCADE,
     FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
 );
@@ -115,6 +117,7 @@ CREATE TABLE Proposta (
     descrizione TEXT,
     id_utente INT,
     id_annuncio INT,
+    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_utente) REFERENCES Utente(id) ON DELETE CASCADE,
     FOREIGN KEY (id_annuncio) REFERENCES Annuncio(id_annuncio) ON DELETE CASCADE
 );
