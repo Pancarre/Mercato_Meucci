@@ -47,23 +47,20 @@
 
                 </form>
 
-                <div class="mb-5">
-                    <span>non sei registrato?</span>
-                    <a href="./frontEnd/Registrazione.php">
-
-                    <button type="button" class="btn btn-primary">Registrati</button>
-
-                    
-                    
-                    </a>
-
-                </div>
-                
-
             </div>
 
-            <div class="col">
+            <div id="sub" class="col">
 
+                <div id="sub-main">
+
+                    <h1>non sei registrato?</h1>
+                    <a href="./frontEnd/registrazione.php">
+
+                        <button type="button" class="btn btn-primary">Registrati</button>
+                        
+                    </a>
+                </div>
+                
             </div>
 
             
