@@ -1,5 +1,6 @@
 -- Creazione della tabella Località
 CREATE TABLE `Località` (
+    -- usare id cap invece di usare cap come id
     CAP VARCHAR(10) PRIMARY KEY,
     citta VARCHAR(100),
     indirizzo VARCHAR(100)
