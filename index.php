@@ -10,8 +10,6 @@
 </head>
 <body>
 
-    <img src="" alt="">
-
     <div class="container-fluid" id="main">
 
         <div class="row" id="main-row">
@@ -20,18 +18,20 @@
 
 
 
-                <img id="meucci_logo" src="./img/logo---itis-meucci---firenze.png" alt="logo meucci">
+                <img id="meucci_logo" class="mt-3"  src="./img/logo---itis-meucci---firenze.png" alt="logo meucci">
 
-                <form class="mt-5 mb-5  custom-form-width" action="./backEnd/scriptlogin.php" method="post">
+                <h1 class="mt-5">Login</h1>
+
+                <form class="mt-5 mb-5  custom-form" action="./backEnd/scriptlogin.php" method="post">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Username</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" >
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-5">Submit</button>
+                    <button id="button-login" type="submit" class="btn btn-primary mb-5">Login</button>
 
                     <?php
 
