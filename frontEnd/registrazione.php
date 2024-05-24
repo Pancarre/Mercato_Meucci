@@ -33,11 +33,7 @@
 
                 <h1 class="mt-5">Registrazione</h1>
 
-<<<<<<< HEAD
                 <form class="mt-5 mb-5  custom-form" action="../backEnd/scriptregistrazione.php" method="post">
-=======
-                <form class="mt-5 mb-5  custom-form" action="../backEnd/scriptlogin.php" method="post">
->>>>>>> pan
                     <div class="mb-3">
                         <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
