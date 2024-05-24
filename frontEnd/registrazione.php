@@ -21,7 +21,7 @@
 
                 <img id="meucci_logo" class="mt-3"  src="../img/logo---itis-meucci---firenze.png" alt="logo meucci">
 
-                <h1 class="mt-5">Login</h1>
+                <h1 class="mt-5">Registrazione</h1>
 
                 <form class="mt-5 mb-5  custom-form" action="./backEnd/scriptlogin.php" method="post">
                     <div class="mb-3">
@@ -78,7 +78,7 @@
 
                 <div class="mb-5">
                     <span>hai già account?</span>
-                    <a href="./frontEnd/Registrazione.php">
+                    <a href="../index.php">
 
                     <button type="button" class="btn btn-primary">Login</button>
 
