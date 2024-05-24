@@ -43,6 +43,8 @@ if(isset($_POST['specialità'])) {
 }
 
 
+
+
 function isDataValid($username, $password, $eta, $email, $telefono, $classe, $indirizzo, $cap, $specialità) {
     if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $indirizzo != null && $cap != null && $specialità != null) {
         return true;
