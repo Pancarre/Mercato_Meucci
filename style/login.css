@@ -19,6 +19,7 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+
 }
 
 #main-row {
@@ -27,19 +28,23 @@ body {
 }
 
 #main-col {
-    padding-left: 5%;
-    padding-top: 3%;
+
     background-color: white;
     min-height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
-.custom-form-width {
-    max-width: 400px; /* Imposta la larghezza massima del form */
-}
 
 #meucci_logo {
     width: 80px;
     height: 80px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#button-login{
+
+    width: 100%;
+
 }
