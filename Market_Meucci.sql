@@ -74,6 +74,12 @@ CREATE TABLE Categoria (
     descrizione TEXT
 );
 
+INSERT INTO Categoria (tipo, descrizione) VALUES
+('telefonia', 'Prodotti relativi alla telefonia, come smartphone e accessori.'),
+('videogiochi', 'Giochi per console o PC, inclusi titoli popolari e accessori.'),
+('informatica', 'Hardware, software e accessori informatici per uso domestico o professionale.'),
+('libri', 'Libri di vario genere, inclusi romanzi, saggi, e manuali.');
+
 -- Creazione della tabella Utente
 CREATE TABLE Utente (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -92,7 +98,7 @@ CREATE TABLE Utente (
 CREATE TABLE Annuncio (
     id_annuncio INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
-    image BLOB,
+    image varchar(100),
     descrizione TEXT,
     stato_di_disponibilità VARCHAR(50),
     id_utente INT,

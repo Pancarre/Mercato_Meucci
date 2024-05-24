@@ -16,6 +16,7 @@ include "../backEnd/check_session.php";
 <body>
 
     <a href="../backEnd/logout.php">Logout</a><br>
+    <a href="./inserisciFile.php">Inserisci file</a><br>
 
 
 
