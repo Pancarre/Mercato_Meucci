@@ -38,7 +38,6 @@
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <input type="password" class="form-control" name="password">
->>>>>>> pan
                     </div>
                     <button id="button-login" type="submit" class="btn btn-primary mb-5">Login</button>
 
