@@ -5,7 +5,6 @@ body {
     overflow-x: hidden; /* Prevenire lo scroll orizzontale */
     overflow-y: hidden;
     background-image: url('../img/body.jpg'); /* Sostituisci con il percorso della tua immagine */
-    background-color: rgba(0, 0, 0, 10000);
     background-size: cover; /* Adatta l'immagine per coprire tutto lo sfondo */
     background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
     background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scorrimento */
