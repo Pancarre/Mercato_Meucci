@@ -64,6 +64,7 @@ include "../backEnd/check_session.php";
                             <h1>Annunci degli altri utenti</h1>
                         </div>
 
+<<<<<<< HEAD
                         <div class="mt-2 col-12 col-lg-6">
                             <form action="./home.php" method="get">
                                 <div class="d-flex" id="filtro">
@@ -127,6 +128,12 @@ include "../backEnd/check_session.php";
 
                 </div>
                 
+=======
+            // Seleziona gli annunci che gli utenti hanno pubblicato ad eccezione di quelli di $id
+            $sql = "SELECT annuncio.*, utente.username FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id' AND annuncio.stato_di_disponibilità = 'Disponibile'";
+
+           
+>>>>>>> b66b086a6ead74e0dcdd213ba402e6d2fc281238
             
             </div>
 

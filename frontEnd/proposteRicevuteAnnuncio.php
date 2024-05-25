@@ -6,8 +6,9 @@ include "../backEnd/check_session.php";
 
 $annuncio_id = isset($_GET['id_annuncio']) ? intval($_GET['id_annuncio']) : 0;
 
-$sql = "SELECT proposta.*, utente.username 
+$sql = "SELECT proposta.*, utente.username,stato.nome
 FROM proposta 
+join stato on stato.id = proposta.id_stato
 JOIN utente ON proposta.id_utente = utente.id 
 WHERE proposta.id_annuncio = '$annuncio_id'";
 
@@ -23,6 +24,7 @@ if($result->num_rows > 0) {
         echo "<p>" . $row["username"] . "</p>";
         echo "<p>" . $row["prezzo_proposto"] . "</p>";
         echo "<p>" . $row["descrizione"] . "</p>";
+        echo "<p>Stato della proposta: " . $row["nome"] . "</p>";
         echo "</div>";
     }
 

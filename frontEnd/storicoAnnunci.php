@@ -60,16 +60,26 @@ include "../backEnd/check_session.php";
                                 echo "<div class='container-fluid'>";
                                     echo "<div class='row'>";
                                         echo "<div class='col-6'>";
-                                            echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
+                                            echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
                                             echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
                                             echo "</a>";
                                         echo "</div>";
                                         echo "<div class='col-6'>";
                                             echo "<h5 class='card-title'>" .  $row["data_creazione"] . "</h5>";
+                                            echo "<p>Stato: " . $row["stato_di_disponibilità"]  . "</p>";
                                             echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                                             echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
-                                            echo "<input type='submit' class='btn btn-primary' value='Visualizza proposte'>"; // Aggiunta di una classe Bootstrap al bottone
+                                            echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza proposte'>"; // Aggiunta di una classe Bootstrap al bottone
                                             echo "</form>";
+                                            if($row["stato_di_disponibilità"] !== 'Non Disponibile') {
+                                                echo "<form action='../backEnd/eliminaAnnuncio.php' method='post'>";
+                                                echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+                                                echo "<input class='btn btn-danger card-btn' type='submit' value='Elimina Annuncio'>";
+                                                echo "</form>";
+                                            } else {
+                                                // Se l'annuncio è già stato eliminato o non è più disponibile, disabilita il tasto "Elimina Annuncio"
+                                                echo "<button type='button' disabled>Elimina Annuncio</button>";
+                                            }
                                         echo "</div>";
                                     echo "</div>";
                                 echo "</div>";
