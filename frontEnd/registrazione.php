@@ -12,7 +12,7 @@
     <div class="container-fluid" id="main">
 
         <div class="row" id="main-row">
-            <div id="sub" class="col">
+            <div id="sub" class="col  d-none d-md-flex">
 
                 <div id="sub-main">
 
@@ -87,6 +87,16 @@
 
 
                 </form>
+
+                <div class="d-block d-md-none">
+
+                    <h1 class="d-inline ">non sei registrato?</h1>
+                    <a href="../index.php">
+
+                        <button type="button" class="btn btn-primary">Registrati</button>
+                            
+                    </a>
+                </div>
 
             </div>
 

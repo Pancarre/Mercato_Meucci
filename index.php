@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container-fluid" id="main">
+    <div class="container-fluid p-0 m-0" id="main">
 
         <div class="row" id="main-row">
 
@@ -47,9 +47,19 @@
 
                 </form>
 
+                <div class="d-block d-md-none">
+
+                    <h1 class="d-inline ">non sei registrato?</h1>
+                    <a href="./frontEnd/registrazione.php">
+
+                        <button type="button" class="btn btn-primary">Registrati</button>
+                            
+                    </a>
+                </div>
+
             </div>
 
-            <div id="sub" class="col">
+            <div id="sub" class="col d-none d-md-flex">
 
                 <div id="sub-main">
 
