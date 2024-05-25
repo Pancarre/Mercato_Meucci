@@ -15,15 +15,30 @@ body {
     padding-left: 2%;
     height: 100%;
     overflow: auto; /* Nel caso il contenuto del div fisso sia troppo lungo */
+    position: fixed;
 }
 
-.container-fluid{
+#profilo-container{
     
     height: 100vh;
 
 
 }
-.container-fluid .row{
+
+#annunci-container{
+    
+    height: 100vh;
+
+
+}
+
+#profilo-row{
+
+    height: 100%;
+
+}
+
+#annunci-row{
 
     height: 100%;
 
@@ -32,5 +47,11 @@ body {
 #main{
 
     overflow-y: auto; /* Permette lo scroll verticale */
+
+}
+
+#filtro{
+
+    max-height: 50px;
 
 }

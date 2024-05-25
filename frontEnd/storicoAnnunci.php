@@ -13,7 +13,11 @@ include "../backEnd/check_session.php";
     <title>Document</title>
 </head>
 <body>
-    <h1>Storico degli annunci</h1>
+
+    <div class="col-12">
+        <h1>Storico degli annunci</h1>
+    </div>
+    
     <?php
 
     // Recupero l'id dell'utente
