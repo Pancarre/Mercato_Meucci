@@ -19,26 +19,31 @@ include "../backEnd/check_session.php";
 
         <div class="row" id="profilo-row">
             <div class="col-3" id="profilo">
-                <div>
+                <div class="profilo-option">
                     <?php
                         echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";    
                     ?>
                 </div>
-                <div>
-                    <a href="../backEnd/logout.php">Logout</a><br>
-                </div>
-
-                <div>
-                    <a href="./inserisciFile.php">Inserisci file</a><br>
-                </div>
-                <div>
-                    <a href="./storicoAnnunci.php">Storico Annunci</a><br>
-                </div>
-
-                <div>
-                    <a href="./storicoProposte.php">Storico delle proposte inviate</a>
-                </div>
-                
+                <a href="../backEnd/logout.php">
+                    <div class="profilo-option">
+                        <span>Logout</span>
+                    </div>
+                </a>
+                <a href="./inserisciFile.php">
+                    <div class="profilo-option">
+                        <span>Inserisci file</span>
+                    </div>
+                </a>
+                <a href="./storicoAnnunci.php">
+                    <div class="profilo-option">
+                        <span>Storico Annunci</span>
+                    </div>
+                </a>
+                <a href="./storicoProposte.php">
+                    <div class="profilo-option">
+                        <span>Storico delle proposte inviate</span>
+                    </div>
+                </a>  
             </div>
 
         </div>   

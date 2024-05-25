@@ -1,0 +1,11 @@
+#card{
+
+    width: 100%;
+
+
+}
+#card-body{
+
+    flex-direction: row;
+
+}
