@@ -12,7 +12,21 @@
 
 .card-btn{
 
-    width: 50%;
+    min-width: 70%;
 
+
+}
+
+#blue{
+
+    background-color: rgb(0, 0, 106);
+    color: white;
+
+}
+
+#arrow-back{
+
+    color: black;
+    background-color: white;
 
 }

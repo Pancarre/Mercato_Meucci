@@ -64,7 +64,6 @@ include "../backEnd/check_session.php";
                             <h1>Annunci degli altri utenti</h1>
                         </div>
 
-<<<<<<< HEAD
                         <div class="mt-2 col-12 col-lg-6">
                             <form action="./home.php" method="get">
                                 <div class="d-flex" id="filtro">

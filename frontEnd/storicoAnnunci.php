@@ -12,20 +12,21 @@ include "../backEnd/check_session.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="../style/storicoAnnuncio.css">
     <title>Document</title>
 </head>
 <body>
 
     <div class="container-fluid">
 
-        <div class="row" >
-            <div class="col-1 text-center pt-3">
-                <span class="material-symbols-outlined">
+        <div class="row">
+            <div class="col-1 text-center pt-3 border" id="arrow-back">
+                <a href="./home.php"><span class="material-symbols-outlined">
                     arrow_back
-                </span>
+                </span></a>
             </div>
 
-            <div class="col-11">
+            <div class="col-11" id="blue">
                 <h1>Storico degli annunci</h1>
             </div>
         </div>
@@ -53,18 +54,18 @@ include "../backEnd/check_session.php";
         if($result->num_rows > 0) {
             
             while($row = $result->fetch_assoc()) {
-                echo "<div class='container-fluid col-4 float-start'>";
+                echo "<div class='container-fluid col-4 float-start mt-4'>";
                     echo "<div class='card' id='card'>";
                         echo "<div class='card-header'>".$row["nome"]."</div>";
                             echo "<div class='card-body'>";
                                 echo "<div class='container-fluid'>";
                                     echo "<div class='row'>";
-                                        echo "<div class='col-6'>";
+                                        echo "<div class='col-12 col-md-6'>";
                                             echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
                                             echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
                                             echo "</a>";
                                         echo "</div>";
-                                        echo "<div class='col-6'>";
+                                        echo "<div class='col-12 col-md-6'>";
                                             echo "<h5 class='card-title'>" .  $row["data_creazione"] . "</h5>";
                                             echo "<p>Stato: " . $row["stato_di_disponibilità"]  . "</p>";
                                             echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
