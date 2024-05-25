@@ -61,8 +61,8 @@
                             </div>
                             <div class="mb-3 col-6">
                                 <select class="form-select" aria-label="Default select example" name="specialità">
-                                    <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                                     <option value="Informatica e telecomunicazione" selected>Informatica e telecomunicazione</option>
+                                    <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                                     <option value="Meccanica">Meccanica</option>
                                     <option value="Logistica">Logistica</option>
                                 </select>
@@ -70,17 +70,6 @@
                         </div>
                     </div>
                     
-                    <div container-fluid>
-                        <div class="row">
-                            <div class="mb-3 col-6">
-                            <input type="number" class="form-control" name="cap" placeholder="CAP">
-                            </div>
-                            <div class="mb-3 col-6">
-                                <input type="text" class="form-control" name="indirizzo" placeholder="Indirizzo">
-                            </div>
-                        </div>
-                    </div>
-
                     <button id="button-login" type="submit" class="btn btn-primary mb-5">Registrati</button>
 
                     <?php
