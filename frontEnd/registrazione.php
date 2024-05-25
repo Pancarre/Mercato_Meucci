@@ -12,7 +12,7 @@
     <div class="container-fluid" id="main">
 
         <div class="row" id="main-row">
-            <div id="sub" class="col">
+            <div id="sub" class="col  d-none d-md-flex">
 
                 <div id="sub-main">
 
@@ -61,8 +61,8 @@
                             </div>
                             <div class="mb-3 col-6">
                                 <select class="form-select" aria-label="Default select example" name="specialità">
-                                    <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                                     <option value="Informatica e telecomunicazione" selected>Informatica e telecomunicazione</option>
+                                    <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                                     <option value="Meccanica">Meccanica</option>
                                     <option value="Logistica">Logistica</option>
                                 </select>
@@ -87,6 +87,16 @@
 
 
                 </form>
+
+                <div class="d-block d-md-none">
+
+                    <h1 class="d-inline ">non sei registrato?</h1>
+                    <a href="../index.php">
+
+                        <button type="button" class="btn btn-primary">Registrati</button>
+                            
+                    </a>
+                </div>
 
             </div>
 
