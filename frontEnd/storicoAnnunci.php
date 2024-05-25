@@ -34,15 +34,29 @@ include "../backEnd/check_session.php";
             
             while($row = $result->fetch_assoc()) {
                 echo "<div>";
-                echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
+                // dati dell'annuncio
+                echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
                 echo "<img src='" . $row["image"] . "' width='50px'>";	
                 echo "<p>" . $row["nome"] . "</p>";
-                echo "<p>" . $row["data_creazione"] . "</p>";
                 echo "</a>";
+                echo "<p>" . $row["data_creazione"] . "</p>";
+                echo "<p>Stato: " . $row["stato_di_disponibilità"]  . "</p>";
+                // FORM per visualizzare le proposte
                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
-                echo "<input type='submit' value='Visualizza proposte'>";
+                echo "<input type='submit' value='Visualizza proposte'><br>";
                 echo "</form>";
+                // FORM per elminare l'annuncio
+                if($row["stato_di_disponibilità"] !== 'Non Disponibile') {
+                    echo "<form action='../backEnd/eliminaAnnuncio.php' method='post'>";
+                    echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+                    echo "<input type='submit' value='Elimina Annuncio'>";
+                    echo "</form>";
+                } else {
+                    // Se l'annuncio è già stato eliminato o non è più disponibile, disabilita il tasto "Elimina Annuncio"
+                    echo "<button type='button' disabled>Elimina Annuncio</button>";
+                }
+
                 echo "</div>";
             }          
     

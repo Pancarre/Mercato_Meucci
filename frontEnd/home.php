@@ -53,7 +53,9 @@ include "../backEnd/check_session.php";
             $categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 
             // Seleziona gli annunci che gli utenti hanno pubblicato ad eccezione di quelli di $id
-            $sql = "SELECT annuncio.*, utente.username FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id'";
+            $sql = "SELECT annuncio.*, utente.username FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id' AND annuncio.stato_di_disponibilità = 'Disponibile'";
+
+           
             
             if (!empty($categoria_id)) {
                 $sql .= " AND annuncio.id_categoria = '$categoria_id'";
