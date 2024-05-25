@@ -25,6 +25,28 @@ if($result->num_rows > 0) {
         echo "<p>" . $row["prezzo_proposto"] . "</p>";
         echo "<p>" . $row["descrizione"] . "</p>";
         echo "<p>Stato della proposta: " . $row["nome"] . "</p>";
+
+        // Form per accettare la proposta
+        if($row["id_stato"] == 1 ){
+            echo "<form action='../backEnd/accettaProposta.php' method='post'>";
+            echo "<input type='hidden' name='id_proposta' value='" . $row["id"] . "'>";
+            echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+            echo "<button type='submit' name='accetta' value='accetta'>Accetta</button>";
+            echo "</form>";
+        } else {
+            echo "<button value='accetta' disabled>Accetta</button>";
+        }
+        // Form per rifiutare la proposta
+        if($row["id_stato"] == 1){
+        echo "<form action='../backEnd/rifiutaProposta.php' method='post'>";
+        echo "<input type='hidden' name='id_proposta' value='" . $row["id"] . "'>";
+        echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+        echo "<button type='submit' name='rifiuta' value='rifiuta'>Rifiuta</button>";
+        echo "</form>";
+        } else {
+            echo "<button value='rifiuta' disabled>Rifiuta</button>";
+        }
+
         echo "</div>";
     }
 
