@@ -53,9 +53,9 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     if($result) {
-        echo 'Nome o email gia esistente';
+
         $_SESSION['error'] = 'Nome o email gia esistente';
-        // header('Location: ../frontEnd/registrazione.php');
+        header('Location: ../frontEnd/registrazione.php');
 
     }
 
@@ -77,9 +77,9 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
         $row = $result->fetch_assoc();
         $id_classe = $row['id_classe'];
     } else {
-        echo 'Classe non trovata o Sezione sbagliata';
+      
         $_SESSION['error'] = 'Classe non trovata o Sezione sbagliata';
-     //   header('Location: ../frontEnd/registrazione.php');
+        header('Location: ../frontEnd/registrazione.php');
     }
 
 
@@ -90,21 +90,20 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     if($result){
-        echo 'Registrazione avvenuta con successo';
+        
         $_SESSION['username'] = $username;
-     //  header('Location: ../frontEnd/home.php');
+       header('Location: ../index.php');
   
     } else {
-        echo 'Errore durante la registrazione';
+
         $_SESSION['error'] = 'Errore durante la registrazione';
-    //    header('Location: ../frontEnd/registrazione.php');
+        header('Location: ../frontEnd/registrazione.php');
     }
 
 } else {
-    echo 'Non sono stati inseriti tutti i campi';
-    $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
 
- //   header('Location: ../frontEnd/registrazione.php');
+    $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
+    header('Location: ../frontEnd/registrazione.php');
 }
 
 

@@ -21,7 +21,7 @@ if($result->num_rows > 0) {
         echo "<div>";
         echo "<h3>Proposta #" . $counter  . "</h3>";
         echo "<p>" . $row["username"] . "</p>";
-        echo "<p>" . $row["prezzo"] . "</p>";
+        echo "<p>" . $row["prezzo_proposto"] . "</p>";
         echo "<p>" . $row["descrizione"] . "</p>";
         echo "</div>";
     }
