@@ -1,0 +1,32 @@
+#card{
+
+    width: 100%;
+
+
+}
+#card-body{
+
+    flex-direction: row;
+
+}
+
+.card-btn{
+
+    min-width: 70%;
+
+
+}
+
+#blue{
+
+    background-color: rgb(0, 0, 106);
+    color: white;
+
+}
+
+#arrow-back{
+
+    color: black;
+    background-color: white;
+
+}
