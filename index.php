@@ -27,7 +27,7 @@
                         <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Passwword">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                     <button id="button-login" type="submit" class="btn btn-primary mb-5">Login</button>
 
