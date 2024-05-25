@@ -71,3 +71,9 @@ body {
     text-decoration: none;
 
 }
+
+#card-container button{
+
+    width: 50%;
+
+}

@@ -106,13 +106,32 @@ include "../backEnd/check_session.php";
                                     // Mostra tutti gli annunci
                                     if($result->num_rows > 0) {
                                         while($row = $result->fetch_assoc()) {
-                                            echo "<div>";
-                                            echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
-                                            echo "<img src='" . $row["image"] . "' width='100px'>";
-                                            echo "<p>" . $row["nome"] . "</p>";
-                                            echo "<p>" . $row["username"] . "</p>";
-                                            echo "</a>";
-                                            echo "</div>";
+                                            echo "<div id='card-container' class='container-fluid col-12 col-sm-6 col-lg-4 float-start mt-4'>";
+                                                echo "<div class='card' id='card'>";
+                                                    echo "<div class='card-header'>".$row["nome"]."</div>";
+                                                        echo "<div class='card-body'>";
+                                                            echo "<div class='container-fluid'>";
+                                                                echo "<div class='row'>";
+                                                                    echo "<div class='col-12 col-md-6'>";
+                                                                        echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
+                                                                        echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
+                                                                        echo "</a>";
+                                                                    echo "</div>";
+                                                                    echo "<div class='col-12 col-md-6'>";
+                                                                        echo "<h5 class='card-title'>" .  $row["data_creazione"] . "</h5>";
+                                                                        echo "<p>" . $row["stato_di_disponibilità"]  . "</p>";
+                                                                        echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
+                                                                        echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+                                                                        echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza'>"; // Aggiunta di una classe Bootstrap al bottone
+                                                                        echo "</form>";
+                                                                    echo "</div>";
+                                                                echo "</div>";
+                                                            echo "</div>";
+                                                        echo "</div>";
+                                                    echo "</div>";
+                                                echo "</div>";
+                                            
+                                        
                                         }
                                     } else {
                                         echo "<p class='text-center mt-5'>Non ci sono annunci da mostrare!</p>";
@@ -141,3 +160,5 @@ include "../backEnd/check_session.php";
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
