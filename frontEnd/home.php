@@ -128,12 +128,6 @@ include "../backEnd/check_session.php";
 
                 </div>
                 
-=======
-            // Seleziona gli annunci che gli utenti hanno pubblicato ad eccezione di quelli di $id
-            $sql = "SELECT annuncio.*, utente.username FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id' AND annuncio.stato_di_disponibilità = 'Disponibile'";
-
-           
->>>>>>> b66b086a6ead74e0dcdd213ba402e6d2fc281238
             
             </div>
 
