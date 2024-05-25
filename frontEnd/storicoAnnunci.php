@@ -34,8 +34,11 @@ include "../backEnd/check_session.php";
             
             while($row = $result->fetch_assoc()) {
                 echo "<div>";
+                echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
                 echo "<img src='" . $row["image"] . "' width='50px'>";	
                 echo "<p>" . $row["nome"] . "</p>";
+                echo "<p>" . $row["data_creazione"] . "</p>";
+                echo "</a>";
                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
                 echo "<input type='submit' value='Visualizza proposte'>";
@@ -44,6 +47,7 @@ include "../backEnd/check_session.php";
             }          
     
         } else {
+            echo "<p>Non ci sono annunci</p>";
             $_SESSION["error"] = "errore: nessun annuncio trovato";
         }
     } else {

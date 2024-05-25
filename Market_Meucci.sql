@@ -1,38 +1,3 @@
--- Creazione della tabella Località
-CREATE TABLE `Località` (
-    -- usare id cap invece di usare cap come id
-    CAP VARCHAR(10) PRIMARY KEY,
-    citta VARCHAR(100),
-    indirizzo VARCHAR(100)
-);
-
-INSERT INTO Località (CAP, citta, indirizzo) VALUES 
-('50121', 'Firenze', 'Via Roma, 1'),
-('50122', 'Firenze', 'Via Tornabuoni, 2'),
-('50123', 'Firenze', 'Piazza Duomo, 3'),
-('50124', 'Firenze', 'Lungarno Vespucci, 4'),
-('50125', 'Firenze', 'Piazza della Signoria, 5'),
-('56121', 'Pisa', 'Via Santa Maria, 6'),
-('56122', 'Pisa', 'Lungarno Pacinotti, 7'),
-('57121', 'Livorno', 'Via Grande, 8'),
-('57122', 'Livorno', 'Piazza della Repubblica, 9'),
-('58100', 'Grosseto', 'Corso Carducci, 10'),
-('59100', 'Prato', 'Via Mazzini, 11'),
-('51100', 'Pistoia', 'Via della Madonna, 12'),
-('52100', 'Arezzo', 'Corso Italia, 13'),
-('53036', 'Poggibonsi', 'Via della Repubblica, 14'),
-('52025', 'Montevarchi', 'Via Roma, 15'),
-('54033', 'Carrara', 'Via Carriona, 16'),
-('55049', 'Viareggio', 'Passeggiata Marconi, 17'),
-('55100', 'Lucca', 'Via Fillungo, 18'),
-('53043', 'Chiusi', 'Piazza Duomo, 19'),
-('53045', 'Montepulciano', 'Via di Voltaia, 20'),
-('53047', 'Sarteano', 'Via del Teatro, 21'),
-('53048', 'Sinalunga', 'Via Trento, 22'),
-('53041', 'Asciano', 'Via Roma, 23'),
-('53042', 'Chianciano Terme', 'Viale della Libertà, 24'),
-('53040', 'Rapolano Terme', 'Via Terme San Giovanni, 25');
-
 -- Creazione della tabella Classe
 CREATE TABLE Classe (
     id_classe INT PRIMARY KEY AUTO_INCREMENT,
@@ -67,7 +32,6 @@ INSERT INTO Classe (classe, specialità) VALUES
 ('4E', 'Meccanica'),
 ('5E', 'Elettronica e elettrotecnica');
 
-
 -- Creazione della tabella Categoria
 CREATE TABLE Categoria (
     id_categoria INT PRIMARY KEY AUTO_INCREMENT,
@@ -90,17 +54,14 @@ CREATE TABLE Utente (
     email VARCHAR(100),
     telefono VARCHAR(20),
     id_classe INT,
-    CAP VARCHAR(10),
-
-    FOREIGN KEY (id_classe) REFERENCES Classe(id_classe),
-    FOREIGN KEY (CAP) REFERENCES `Località`(CAP)
+    FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
 );
 
 -- Creazione della tabella Annuncio
 CREATE TABLE Annuncio (
     id_annuncio INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
-    image varchar(100),
+    image VARCHAR(100),
     descrizione TEXT,
     stato_di_disponibilità VARCHAR(50),
     id_utente INT,
@@ -110,16 +71,27 @@ CREATE TABLE Annuncio (
     FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
 );
 
+-- Creazione della tabella Stato per le proposte
+CREATE TABLE Stato (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(50) NOT NULL
+);
+
+INSERT INTO Stato (nome) VALUES ('In attesa'), ('Accettata'), ('Rifiutata');
+
 -- Creazione della tabella Proposta
 CREATE TABLE Proposta (
-    id_proposta INT PRIMARY KEY AUTO_INCREMENT,
-    prezzo DECIMAL(10, 2),
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_annuncio INT NOT NULL,
+    id_utente INT NOT NULL,
+    prezzo_proposto DECIMAL(10, 2) NOT NULL,
+    data_proposta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_stato INT DEFAULT 1,
     descrizione TEXT,
-    id_utente INT,
-    id_annuncio INT,
-    data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utente) REFERENCES Utente(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_annuncio) REFERENCES Annuncio(id_annuncio) ON DELETE CASCADE
+
+    FOREIGN KEY (id_annuncio) REFERENCES Annuncio(id_annuncio),
+    FOREIGN KEY (id_utente) REFERENCES Utente(id),
+    FOREIGN KEY (id_stato) REFERENCES Stato(id)
 );
 
 -- Creazione della tabella Commenti

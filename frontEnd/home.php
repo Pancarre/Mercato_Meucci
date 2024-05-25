@@ -21,7 +21,7 @@ include "../backEnd/check_session.php";
     <a href="../backEnd/logout.php">Logout</a><br>
     <a href="./inserisciFile.php">Inserisci file</a><br>
     <a href="./storicoAnnunci.php">Storico Annunci</a><br>
-
+    <a href="./storicoProposte.php">Storico delle proposte inviate</a>
     <h1>Annunci degli altri utenti</h1>
  
     <div class="mb-3 col-6">

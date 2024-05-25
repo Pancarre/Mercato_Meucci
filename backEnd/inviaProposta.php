@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
         exit();
     } else {
         // Inserimento della proposta
-        $sql = "INSERT INTO proposta (prezzo, descrizione, id_utente, id_annuncio) VALUES ('$prezzo', '$descrizione', '$utente_id', '$annuncio_id')";
+        $sql = "INSERT INTO proposta (id_annuncio,id_utente,prezzo_proposto,descrizione) VALUES ('$annuncio_id','$utente_id','$prezzo','$descrizione')";
         
         if($conn->query($sql)) {
             echo "proposta inviata con successo";

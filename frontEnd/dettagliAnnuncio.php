@@ -40,6 +40,7 @@ $row = $result->fetch_assoc();
         echo "<h3>Descrizione</h3>";
         echo "<p>" . $row["descrizione"] . "</p><br>";
         echo "<p>" . "Pubblicato da: ". $row["username"] . "</p><br>";
+        echo "<p>" . "Data creazione: " . $row["data_creazione"] . "</p><br>";
        
         ?>
         <h3>Contattami</h3>
