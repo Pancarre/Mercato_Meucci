@@ -30,30 +30,47 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/dettagliannuncio.css">
     <title>Document</title>
 </head>
 <body>
 
-    <div>
-        <?php
-        echo "<h1>" . $row["nome"] . "</h1>";
-        echo "<img src='" . $row["image"] . "' width='200px'>";
-        echo "<h3>Descrizione</h3>";
-        echo "<p>" . $row["descrizione"] . "</p><br>";
-        echo "<p>" . "Pubblicato da: ". $row["username"] . "</p><br>";
-        echo "<p>" . "Data creazione: " . $row["data_creazione"] . "</p><br>";
-       
-        ?>
-        <h3>Contattami</h3>
-        <?php
-        echo "<p>" . $row["email"] . "</p>";
-        echo "<p>" . $row["telefono"] . "</p>";
-        ?>
-    </div>
+<div class="grid-container">
+    <div class="grid-item" id="imag1"></div>
+    <div class="grid-item">
+    <h2>Nome prodotto : <?php echo $row["nome"]; ?></h2>
 
+ <img src="<?php echo $row["image"]; ?>">
 
+ <table>
 
-    <?php if (!$from_storico): ?>
+   <h2>Descrizione</h2>
+
+ <tr>
+   <th>Pubblicato da</th>
+   <td><?php echo $row["username"]; ?></td>
+ </tr>
+ <tr>
+   <th>Data creazione</th>
+   <td><?php echo $row["data_creazione"]; ?></td>
+ </tr>
+ </table>
+
+ <h3>Contattami</h3>
+
+ <table>
+  <tr>
+   <th>Email</th> 
+   <td><?php echo $row["email"]; ?></td>
+ </tr>
+ <tr>
+   <th>Telefono</th>
+   <td><?php echo $row["telefono"]; ?></td>
+ </tr>
+ </table>
+ 
+   <?php if (!$from_storico): ?>
         <!-- Mostra la sezione "Fai una proposta" solo se l'utente non proviene dalla pagina storiccoAnnunci.php -->
         <h3>Fai una proposta</h3>
         <form action="../backEnd/inviaProposta.php" method="post">
@@ -66,7 +83,12 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
             <button type="submit" class="btn btn-primary">Invia proposta</button>
         </form>
     <?php endif; ?>
+    
+    </div>
+    <div class="grid-item" id="imag3"></div>
+  </div>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
