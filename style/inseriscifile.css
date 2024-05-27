@@ -1,0 +1,72 @@
+#imag1{
+    background-image: url('../img/blue-space-4k-phone-rlz84z3ar9x13g5n.jpg');
+     background-size: cover;
+     background-position: center;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+   }
+ 
+    #imag3{
+     background-image: url('../img/blue-space-4k-phone-rlz84z3ar9x13g5n.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+form {
+    
+    background-color: #f2f2f2;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    height: 100%;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+textarea {
+resize: none;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+background-color: #45a049;
+}
+    #imagePreview {
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100vh;
+            
+}
+    .grid-item {
+    background-color: #f4eded;
+    padding: 20px;
+  }
