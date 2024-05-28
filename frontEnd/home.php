@@ -18,7 +18,12 @@ include "../backEnd/check_session.php";
     <div class="container-fluid col-3" id="profilo-container">
 
         <div class="row" id="profilo-row">
+
             <div class="col-3" id="profilo">
+                <div class="text-center bg-success" id="toggle1">
+                    <p><-</p>
+                </div>
+                <img id="logo-meucci" src="../img/logo---itis-meucci---firenze.png" alt="meucci logo">
                 <div class="profilo-option">
                     <?php
                         echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";    
@@ -60,8 +65,11 @@ include "../backEnd/check_session.php";
             <div class="col-12 mt-3" id="main">
                 <div class="container-fluid">
                     <div class="row">
-
+                        <div class="text-center bg-success col-12" id="toggle2">
+                                <p><-</p>
+                        </div>
                         <div class="col-12 col-lg-6">
+
                             <h1>Annunci degli altri utenti</h1>
                         </div>
 
@@ -156,9 +164,10 @@ include "../backEnd/check_session.php";
 
     
     
-    
+                                
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../javascript/home.js"></script>
 </body>
 </html>
 

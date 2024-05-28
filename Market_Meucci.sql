@@ -1,11 +1,11 @@
--- Creazione della tabella Classe
-CREATE TABLE Classe (
+-- Creazione della tabella classe
+CREATE TABLE classe (
     id_classe INT PRIMARY KEY AUTO_INCREMENT,
     classe VARCHAR(2),
     specialità VARCHAR(50)
 );
 
-INSERT INTO Classe (classe, specialità) VALUES 
+INSERT INTO classe (classe, specialità) VALUES 
 ('1A', 'Elettronica e elettrotecnica'),
 ('2A', 'Elettronica e elettrotecnica'),
 ('3A', 'Informatica e telecomunicazione'),
@@ -32,21 +32,21 @@ INSERT INTO Classe (classe, specialità) VALUES
 ('4E', 'Meccanica'),
 ('5E', 'Elettronica e elettrotecnica');
 
--- Creazione della tabella Categoria
-CREATE TABLE Categoria (
+-- Creazione della tabella categoria
+CREATE TABLE categoria (
     id_categoria INT PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(50),
     descrizione TEXT
 );
 
-INSERT INTO Categoria (tipo, descrizione) VALUES
+INSERT INTO categoria (tipo, descrizione) VALUES
 ('telefonia', 'Prodotti relativi alla telefonia, come smartphone e accessori.'),
 ('videogiochi', 'Giochi per console o PC, inclusi titoli popolari e accessori.'),
 ('informatica', 'Hardware, software e accessori informatici per uso domestico o professionale.'),
 ('libri', 'Libri di vario genere, inclusi romanzi, saggi, e manuali.');
 
--- Creazione della tabella Utente
-CREATE TABLE Utente (
+-- Creazione della tabella utente
+CREATE TABLE utente (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
@@ -54,11 +54,11 @@ CREATE TABLE Utente (
     email VARCHAR(100),
     telefono VARCHAR(20),
     id_classe INT,
-    FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
+    FOREIGN KEY (id_classe) REFERENCES classe(id_classe)
 );
 
--- Creazione della tabella Annuncio
-CREATE TABLE Annuncio (
+-- Creazione della tabella annuncio
+CREATE TABLE annuncio (
     id_annuncio INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100),
     image VARCHAR(100),
@@ -67,20 +67,20 @@ CREATE TABLE Annuncio (
     id_utente INT,
     id_categoria INT,
     data_creazione TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_utente) REFERENCES Utente(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_categoria) REFERENCES Categoria(id_categoria)
+    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
--- Creazione della tabella Stato per le proposte
-CREATE TABLE Stato (
+-- Creazione della tabella stato per le proposte
+CREATE TABLE stato (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL
 );
 
-INSERT INTO Stato (nome) VALUES ('In attesa'), ('Accettata'), ('Rifiutata');
+INSERT INTO stato (nome) VALUES ('In attesa'), ('Accettata'), ('Rifiutata');
 
--- Creazione della tabella Proposta
-CREATE TABLE Proposta (
+-- Creazione della tabella proposta
+CREATE TABLE proposta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_annuncio INT NOT NULL,
     id_utente INT NOT NULL,
@@ -89,18 +89,18 @@ CREATE TABLE Proposta (
     id_stato INT DEFAULT 1,
     descrizione TEXT,
 
-    FOREIGN KEY (id_annuncio) REFERENCES Annuncio(id_annuncio),
-    FOREIGN KEY (id_utente) REFERENCES Utente(id),
-    FOREIGN KEY (id_stato) REFERENCES Stato(id)
+    FOREIGN KEY (id_annuncio) REFERENCES annuncio(id_annuncio),
+    FOREIGN KEY (id_utente) REFERENCES utente(id),
+    FOREIGN KEY (id_stato) REFERENCES stato(id)
 );
 
--- Creazione della tabella Commenti
-CREATE TABLE Commenti (
+-- Creazione della tabella commenti
+CREATE TABLE commenti (
     id_commenti INT PRIMARY KEY AUTO_INCREMENT,
     titolo VARCHAR(100),
     testo TEXT,
     id_utente INT,
     id_annuncio INT,
-    FOREIGN KEY (id_utente) REFERENCES Utente(id) ON DELETE SET NULL,
-    FOREIGN KEY (id_annuncio) REFERENCES Annuncio(id_annuncio) ON DELETE CASCADE
+    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE SET NULL,
+    FOREIGN KEY (id_annuncio) REFERENCES annuncio(id_annuncio) ON DELETE CASCADE
 );
