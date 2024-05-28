@@ -20,9 +20,6 @@ include "../backEnd/check_session.php";
         <div class="row" id="profilo-row">
 
             <div class="col-3" id="profilo">
-                <div class="text-center bg-success" id="toggle1">
-                    <p><-</p>
-                </div>
                 <img id="logo-meucci" src="../img/logo---itis-meucci---firenze.png" alt="meucci logo">
                 <div class="profilo-option">
                     <?php
@@ -57,6 +54,19 @@ include "../backEnd/check_session.php";
     </div>
 
 
+    
+    <div class="toggle-container">
+
+        <div>
+
+            <div class="text-center position-fixed" id="toggle">
+                <p class="bg-success"><-</p>
+            </div>
+
+        </div>
+
+    </div>
+
     <div class="container-fluid" id="annunci-container">
 
         <div class="row" id="annunci-row">
@@ -65,9 +75,7 @@ include "../backEnd/check_session.php";
             <div class="col-12 mt-3" id="main">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="text-center bg-success col-12" id="toggle2">
-                                <p><-</p>
-                        </div>
+
                         <div class="col-12 col-lg-6">
 
                             <h1>Annunci degli altri utenti</h1>
@@ -143,7 +151,7 @@ include "../backEnd/check_session.php";
                                         
                                         }
                                     } else {
-                                        echo "<p class='text-center mt-5'>Non ci sono annunci da mostrare!</p>";
+                                        echo "    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p class='text-center mt-5'>Non ci sono annunci da mostrare!</p>";
                                     }
                                 } 
 
@@ -163,7 +171,7 @@ include "../backEnd/check_session.php";
     </div>
 
     
-    
+
                                 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
