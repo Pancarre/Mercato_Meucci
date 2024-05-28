@@ -31,29 +31,30 @@ if(isset($_POST['telefono'])) {
 if(isset($_POST['classe'])) {
     $classe = $_POST['classe'];
 }
-if(isset($_POST['specialità'])) {
-    $specialità = $_POST['specialità'];
+if(isset($_POST['specialita'])) {
+    $specialita = $_POST['specialita'];
 }
 
 
 
 
-function isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità) {
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $specialità != null) {
+function isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialita) {
+    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $specialita != null) {
         return true;
     }
     return false;
 }
 
-if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità)) {
+if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialita)) {
 
     $sql = "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
+    echo "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
     $result = $conn->query($sql);
     
 
 
     if($result) {
-
+		echo "Nome o email gia esistente";
         $_SESSION['error'] = 'Nome o email gia esistente';
         header('Location: ../frontEnd/registrazione.php');
 
@@ -65,7 +66,7 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     // Controllo che la classe esista
-    $sql = "SELECT id_classe FROM classe WHERE classe = '$classe' AND specialità = '$specialità'";
+    $sql = "SELECT id_classe FROM classe WHERE classe = '$classe' AND specialità = '$specialita'";
     $result = $conn->query($sql);
 
     
@@ -77,9 +78,8 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
         $row = $result->fetch_assoc();
         $id_classe = $row['id_classe'];
     } else {
-      
         $_SESSION['error'] = 'Classe non trovata o Sezione sbagliata';
-        header('Location: ../frontEnd/registrazione.php');
+        header('Location:  ../frontEnd/registrazione.php');
     }
 
 
@@ -90,18 +90,19 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     if($result){
-        
+        echo "successo";
         $_SESSION['username'] = $username;
        header('Location: ../index.php');
   
     } else {
-
+ 
+		echo "Errore durante la registrazione";
         $_SESSION['error'] = 'Errore durante la registrazione';
         header('Location: ../frontEnd/registrazione.php');
     }
 
 } else {
-
+	echo "Non sono stati inseriti tutti i campi";
     $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
     header('Location: ../frontEnd/registrazione.php');
 }

@@ -20,7 +20,7 @@ include '../backEnd/connessione.php';
     <div class="grid-container">
     <div class="grid-item" id="imag1"></div>
     <div class="grid-item">
-    <form method="post" action="../backEnd/scriptinseriscifile.php" enctype="multipart/form-data">
+    <form method="post" action="../backEnd/scriptInserisciFile.php" enctype="multipart/form-data">
         <label for="titolo">Titolo dell'annuncio:</label>
         <input type="text" name="titolo" placeholder="titolo" required><br>
         <div id="imagePreview"></div>
@@ -37,7 +37,7 @@ include '../backEnd/connessione.php';
         
 
         <input type="submit">
-
+		<a href="./home.php">tornare a home</a>
 
         <script>
         function previewImage(event) {

@@ -24,11 +24,7 @@ include "../backEnd/check_session.php";
                         echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";    
                     ?>
                 </div>
-                <a href="../backEnd/logout.php">
-                    <div class="profilo-option">
-                        <span>Logout</span>
-                    </div>
-                </a>
+
                 <a href="./inserisciFile.php">
                     <div class="profilo-option">
                         <span>Inserisci file</span>
@@ -43,7 +39,12 @@ include "../backEnd/check_session.php";
                     <div class="profilo-option">
                         <span>Storico delle proposte inviate</span>
                     </div>
-                </a>  
+                </a>
+                <a href="../backEnd/logout.php">
+                    <div class="profilo-option bg-danger">
+                        <span>Logout</span>
+                    </div>
+                </a>
             </div>
 
         </div>   
@@ -113,7 +114,7 @@ include "../backEnd/check_session.php";
                                                             echo "<div class='container-fluid'>";
                                                                 echo "<div class='row'>";
                                                                     echo "<div class='col-12 col-md-6'>";
-                                                                        echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
+                                                                        echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
                                                                         echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                                         echo "</a>";
                                                                     echo "</div>";

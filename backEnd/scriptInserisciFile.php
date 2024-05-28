@@ -33,7 +33,7 @@ if($result->num_rows > 0) {
 
 
 if(move_uploaded_file($_FILES["imgprofilo"]["tmp_name"], $target_file)){
-    
+    	
 
     $sql = "INSERT INTO annuncio (nome,image,descrizione, stato_di_disponibilità,id_utente, id_categoria) VALUES ('$titolo', '$target_file','$descrizione', 'Disponibile', '$id_utente', '$id_categoria')";
     $result = $conn->query($sql);

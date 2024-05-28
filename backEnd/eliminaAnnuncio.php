@@ -25,6 +25,3 @@ if ($result_annuncio && $result_proposta) {
 
 
 ?>
-
-
-

@@ -60,7 +60,7 @@
                                 <input type="text" class="form-control" name="classe" placeholder="Classe">
                             </div>
                             <div class="mb-3 col-6">
-                                <select class="form-select" aria-label="Default select example" name="specialità">
+                                <select class="form-select" aria-label="Default select example" name="specialita">
                                     <option value="Informatica e telecomunicazione" selected>Informatica e telecomunicazione</option>
                                     <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
                                     <option value="Meccanica">Meccanica</option>
@@ -74,7 +74,7 @@
 
                     <?php
 
-                  
+                  		session_start();
                         if(isset($_SESSION["errore"])){
 
                             
