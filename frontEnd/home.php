@@ -63,7 +63,7 @@
         <div class="offcanvas-body blue" id="profilo">
           <div class="profilo-option">
               <?php
-                  echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";
+                  echo "<p class='mb-0'>User</p><a href='./mostraProfilo.php'>" . $_SESSION["username"] . "</a><br>";
               ?>
           </div>
 
