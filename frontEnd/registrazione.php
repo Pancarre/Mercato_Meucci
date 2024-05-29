@@ -35,29 +35,41 @@
 
                 <form class="mt-5 mb-5  custom-form" action="../backEnd/scriptregistrazione.php" method="post">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Username" required>
                     </div>
+
+                    <div class="mb-3 col-6">
+                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                    </div>
+
+                    
                     <div class="mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" >
+                        <input type="text" class="form-control" name="nome" placeholder="nome" required>
+                    </div>
+                
+                    <div class="mb-3">
+                        <input type="text" class="form-control" name="cognome" placeholder="cognome" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required >
                     </div>
                     
                     <div container-fluid>
                         <div class="row">
+
                             <div class="mb-3 col-6">
-                            <input type="email" class="form-control" name="email" placeholder="Email">
-                            </div>
-                            <div class="mb-3 col-6">
-                                <input type="number" class="form-control" name="telefono" placeholder="Telefono">
+                                <input type="number" class="form-control" name="telefono" placeholder="Telefono" required>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="number" class="form-control" name="eta" placeholder="Età">
+                        <input type="number" class="form-control" name="eta" placeholder="Età" required>
                     </div>
                     <div container-fluid>
                         <div class="row">
                             <div class="mb-3 col-6">
-                                <input type="text" class="form-control" name="classe" placeholder="Classe">
+                                <input type="text" class="form-control" name="classe" placeholder="Classe" required>
                             </div>
                             <div class="mb-3 col-6">
                                 <select class="form-select" aria-label="Default select example" name="specialità">

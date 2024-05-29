@@ -47,15 +47,21 @@ INSERT INTO Categoria (tipo, descrizione) VALUES
 
 -- Creazione della tabella Utente
 CREATE TABLE Utente (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
     eta INT,
-    email VARCHAR(100),
+    email VARCHAR(100) NOT NULL,
     telefono VARCHAR(20),
     id_classe INT,
-    FOREIGN KEY (id_classe) REFERENCES Classe(id_classe)
+    nome VARCHAR(50),
+    cognome VARCHAR(50),
+    immagine_profilo VARCHAR(255) DEFAULT 'uploads/immagineprofilodefault.png',
+    PRIMARY KEY (email),
+    FOREIGN KEY (id_classe) REFERENCES Classe(id_classe),
+    UNIQUE (id)  
 );
+
 
 -- Creazione della tabella Annuncio
 CREATE TABLE Annuncio (

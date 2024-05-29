@@ -3,20 +3,26 @@
 include "connessione.php";
 session_start();
 
-$username = null;
+$email = null;
 $password = null;
 
 
-if(isset($_POST["username"]) && isset($_POST["password"])){
-    $username = $_POST["username"];
+if(isset($_POST["email"]) && isset($_POST["password"])){
+    $email = $_POST["email"];
     $password = hash("sha256",$_POST["password"]);
 }
 
 
 
-if($username != null && $password != null){
+if($email != null && $password != null){
+
+    // prendo l'username dell'email
+    $sql = "SELECT username FROM utente WHERE email = '$email'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $username = $row["username"];
     
-   
+   // prendo i dati dell'utante username
     $sql = "SELECT * FROM utente WHERE username = '$username'";
     $result = $conn->query($sql);
 

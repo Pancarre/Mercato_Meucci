@@ -24,7 +24,7 @@
 
                 <form class="mt-5 mb-5  custom-form" action="./backEnd/scriptlogin.php" method="post">
                     <div class="mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="email" placeholder="email">
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" name="password" placeholder="Password">

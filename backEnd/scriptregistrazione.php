@@ -10,6 +10,8 @@ $email = null;
 $telefono = null;
 $classe = null;
 $specialità = null;
+$nome = null;
+$cognome = null;
 
 
 
@@ -34,18 +36,24 @@ if(isset($_POST['classe'])) {
 if(isset($_POST['specialità'])) {
     $specialità = $_POST['specialità'];
 }
+if(isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
+}
+if(isset($_POST['cognome'])) {
+    $cognome = $_POST['cognome'];
+}
 
 
 
 
-function isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità) {
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $specialità != null) {
+function isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità, $nome, $cognome) {
+    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $specialità != null && $nome != null && $cognome != null) {
         return true;
     }
     return false;
 }
 
-if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità)) {
+if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità, $nome, $cognome)) {
 
     $sql = "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
     $result = $conn->query($sql);
@@ -85,13 +93,13 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     // Inserimento dell'utente
-    $sql = "INSERT INTO utente(username, password, eta, email, telefono, id_classe) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$id_classe')";
+    $sql = "INSERT INTO utente(username, password, eta, email, telefono, id_classe, nome, cognome) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$id_classe', '$nome', '$cognome')";
     $result = $conn->query($sql);
 
 
     if($result){
         
-        $_SESSION['username'] = $username;
+    $_SESSION['username'] = $username;
        header('Location: ../index.php');
   
     } else {
