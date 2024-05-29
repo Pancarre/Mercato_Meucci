@@ -21,16 +21,16 @@ if ($result->num_rows > 0) {
     $result = $conn->query($sql);
 
     if($result->num_rows > 0) {
-        echo "errore: l'utente ha gia proposto per questo annuncio";
+        $_SESSION["error"] = "errore: l'utente ha gia proposto per questo annuncio";
         exit();
     } else {
         // Inserimento della proposta
         $sql = "INSERT INTO proposta (id_annuncio,id_utente,prezzo_proposto,descrizione) VALUES ('$annuncio_id','$utente_id','$prezzo','$descrizione')";
         
         if($conn->query($sql)) {
-            echo "proposta inviata con successo";
+            $_SESSION["error"] = "proposta inviata con successo";
         } else {
-            echo "errore durante l'inserimento della proposta";
+            $_SESSION["error"] = "errore durante l'inserimento della proposta";
         }
 
     }

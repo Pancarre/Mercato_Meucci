@@ -39,14 +39,14 @@ if(move_uploaded_file($_FILES["imgprofilo"]["tmp_name"], $target_file)){
     $result = $conn->query($sql);
 
     if(!$result){
-        echo "Errore durante l'inserimento annuncio";
+        
         $_SESSION["error"] = "Errore durante l'inserimento annuncio";
     }
 
     header("Location: ../frontEnd/home.php");
 
 } else {
-    echo "Errore durante il caricamento dell'immagine";
+
     $_SESSION["error"] = "Errore durante il caricamento dell'immagine";
 
 }
