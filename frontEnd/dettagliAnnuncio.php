@@ -73,18 +73,25 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
    <?php if (!$from_storico): ?>
         <!-- Mostra la sezione "Fai una proposta" solo se l'utente non proviene dalla pagina storiccoAnnunci.php -->
         <h3>Fai una proposta</h3>
+        <?php
+          if(isset($_SESSION["errore"])){
+              echo "<h3 class='text-danger'>" . $_SESSION['errore'] . "</h3>";
+              unset($_SESSION["errore"]);
+            }
+        ?>
         <form action="../backEnd/inviaProposta.php" method="post">
             <input type="hidden" name="annuncio_id" value="<?php echo $annuncio_id; ?>">
             <div class="mb-3">
-                <label for="prezzo" class="form-label">Prezzo proposto:</label>
+                <p>Prezzo proposto:</p>
                 <input type="number" class="form-control" id="prezzo" name="prezzo" required> <br>
                 <textarea name="descrizione" class="form-control" cols="30" rows="10" maxlength="200" placeholder="Inserisci una descrizione" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Invia proposta</button>
+            
         </form>
     <?php endif; ?>
-    
-    </div>
+    <a href="./home.php">ritorna a home</a>
+  </div>
     <div class="grid-item" id="imag3"></div>
   </div>
 

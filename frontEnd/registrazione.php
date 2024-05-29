@@ -84,6 +84,7 @@ $result = $conn->query($sql);
                     <?php
                         if(isset($_SESSION["errore"])){
                             echo "<br><h3 class='text-danger'>Errore: " . $_SESSION["errore"] . "</h3>";
+                            unset($_SESSION["errore"]);
                         }
                     ?>
                 </form>

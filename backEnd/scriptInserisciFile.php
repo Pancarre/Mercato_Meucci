@@ -40,15 +40,16 @@ if(move_uploaded_file($_FILES["imgprofilo"]["tmp_name"], $target_file)){
 
     if(!$result){
         
-        $_SESSION["error"] = "Errore durante l'inserimento annuncio";
+        $_SESSION["errore"] = "Errore durante l'inserimento annuncio";
     }
 
     header("Location: ../frontEnd/home.php");
 
 } else {
 
-    $_SESSION["error"] = "Errore durante il caricamento dell'immagine";
+    $_SESSION["errore"] = "Errore durante il caricamento dell'immagine";
 
+    header("Location: ../frontEnd/home.php");
 }
 
 
