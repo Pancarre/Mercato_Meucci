@@ -40,14 +40,12 @@ if($email != null && $password != null){
         } else {
             // Se la password non è corretta, faccio il redirect
             $_SESSION["errore"] = "username o password sbagliata";
-
             header("Location: ../index.php");
         }
 
     } else {
         // Se l'utente non esiste, faccio il redirect
         $_SESSION["errore"] = "Utente non trovato";
-
         header("Location: ../index.php");
     }
 
@@ -55,7 +53,6 @@ if($email != null && $password != null){
 
 } else {
     $_SESSION["errore"] = "Compila tutti i campi!!";
-    
     header("Location: ../index.php");
 }
 
