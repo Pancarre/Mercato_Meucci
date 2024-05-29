@@ -4,7 +4,7 @@ body {
     height: 100%;
     overflow-x: hidden; /* Prevenire lo scroll orizzontale */
     overflow-y: hidden;
-    background-image: url('../img/body.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-image: url('../img/body.png'); /* Sostituisci con il percorso della tua immagine */
     background-size: cover; /* Adatta l'immagine per coprire tutto lo sfondo */
     background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
     background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scorrimento */

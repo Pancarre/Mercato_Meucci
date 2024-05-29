@@ -88,6 +88,18 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
     <div class="grid-item" id="imag3"></div>
   </div>
 
+  <?php
+
+    session_start();
+    if(isset($_SESSION["errore"])){
+
+        
+        echo "<br><h3 class='text-danger'>errore: " . $_SESSION["errore"] ."</h3>";
+
+
+    }
+
+  ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

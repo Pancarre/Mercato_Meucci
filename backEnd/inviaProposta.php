@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
     $result = $conn->query($sql);
 
     if($result->num_rows > 0) {
-        echo "errore: l'utente ha gia proposto per questo annuncio";
+        $_SESSION ["errore"]="errore: l'utente ha gia proposto per questo annuncio";
         exit();
     } else {
         // Inserimento della proposta

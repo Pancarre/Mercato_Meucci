@@ -1,7 +1,6 @@
 <?php
-    include("../backEnd/connessione.php");
-    include("../backEnd/check_session.php");
-
+    include "../backEnd/connessione.php";
+    include "../backEnd/check_session.php";
 ?>
 
 <!DOCTYPE html>
@@ -9,69 +8,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Include Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../style/home.css" rel="stylesheet">
-    <title>Fixed Position Divs with Bootstrap</title>
+    <title>Offcanvas Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/home.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
 </head>
 <body>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid"  id="top-navbar">
+          <a class="navbar-brand" href="#">
+            <img src="../img/logo---itis-meucci---firenze.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Meucci
+          </a>
+          <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <span class="material-symbols-outlined pt-1">
+                menu
+            </span>
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
 
-    <div class="fixed-left" id="profilo">
-        <img id="logo-meucci" src="../img/logo---itis-meucci---firenze.png" alt="meucci logo">
-        <div class="profilo-option">
-            <?php
-                echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";
-            ?>
+            
+              </li>
+            </ul>
+
+            <form class="d-flex" action="./home.php" method="get">
+
+                    <select id="filtro" class="form-select" name="categoria">
+                        <option value="" selected>Tutte le categorie</option>
+                        <option value="1">Telefonia</option>
+                        <option value="2">Videogiochi</option>
+                        <option value="3">Informatica</option>
+                        <option value="4">Libri</option> 
+                    </select>
+                    <button id="button-login" type="submit" class="btn btn-primary">Filtra</button>
+
+            </form>
+          </div>
         </div>
+      </nav>
 
-        <a href="./inserisciFile.php" >
-            <div class="profilo-option">
-                <span>Inserisci file</span>
-            </div>
-        </a>
-        <a href="./storicoAnnunci.php">
-            <div class="profilo-option">
-                <span>Storico Annunci</span>
-            </div>
-        </a>
-        <a href="./storicoProposte.php">
-            <div class="profilo-option">
-                <span>Storico delle proposte inviate</span>
-            </div>
-        </a>
-        <a href="../backEnd/logout.php">
-            <div class="profilo-option bg-danger">
-                <span>Logout</span>
-            </div>
-        </a>
-    </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="profilo">
+          <div class="profilo-option">
+              <?php
+                  echo "<p class='mb-0'>User</p><a href=''>" . $_SESSION["username"] . "</a><br>";
+              ?>
+          </div>
 
-    <div class="fixed-center start-center bg-success" id="toggle">
+          <a href="./inserisciFile.php" >
+              <div class="profilo-option">
+                  <span>Inserisci file</span>
+              </div>
+          </a>
+          <a href="./storicoAnnunci.php">
+              <div class="profilo-option">
+                  <span>Storico Annunci</span>
+              </div>
+          </a>
+          <a href="./storicoProposte.php">
+              <div class="profilo-option">
+                  <span>Storico delle proposte inviate</span>
+              </div>
+          </a>
+          <a href="../backEnd/logout.php">
+              <div class="profilo-option bg-danger">
+                  <span>Logout</span>
+              </div>
+          </a>
+        </div>
+      </div>
 
-    </div>
-
-    <div class="main-content main-left">
+      
+    <div class="main-content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12 col-lg-6 px-0">
+
+                <div class="col-12 text-center">
 
                     <h1>Annunci degli altri utenti</h1>
+
                 </div>
 
                 <div class="mt-2 col-12 col-lg-6">
-                    <form action="./home.php" method="get">
-                        <div class="d-flex" >
-                            <select id="filtro" class="form-select" name="categoria">
-                                <option value="" selected>Tutte le categorie</option>
-                                <option value="1">Telefonia</option>
-                                <option value="2">Videogiochi</option>
-                                <option value="3">Informatica</option>
-                                <option value="4">Libri</option> 
-                            </select>
-                            <button id="button-login" type="submit" class="btn btn-primary">Filtra</button>
-                        </div>
-                        
-                    </form>
+
                 </div>
 
                 <div class="col-12">
@@ -139,11 +169,12 @@
         </div>
     </div>
 
-    <!-- Include Bootstrap JS and dependencies -->
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src="../javascript/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
