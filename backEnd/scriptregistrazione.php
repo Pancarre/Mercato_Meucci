@@ -8,8 +8,7 @@ $password = null;
 $eta = null;
 $email = null;
 $telefono = null;
-$classe = null;
-$specialità = null;
+$id_classe = null;
 $nome = null;
 $cognome = null;
 
@@ -30,11 +29,8 @@ if(isset($_POST['email'])) {
 if(isset($_POST['telefono'])) {
     $telefono = $_POST['telefono'];
 }
-if(isset($_POST['classe'])) {
-    $classe = $_POST['classe'];
-}
-if(isset($_POST['specialità'])) {
-    $specialità = $_POST['specialità'];
+if(isset($_POST['id_classe'])) {
+    $id_classe = $_POST['id_classe'];
 }
 if(isset($_POST['nome'])) {
     $nome = $_POST['nome'];
@@ -45,25 +41,25 @@ if(isset($_POST['cognome'])) {
 
 
 
-
-function isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità, $nome, $cognome) {
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $classe != null && $specialità != null && $nome != null && $cognome != null) {
+function isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome, $cognome) {
+    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $id_classe != null  && $nome != null && $cognome != null) {
         return true;
     }
     return false;
 }
 
-if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $specialità, $nome, $cognome)) {
+if(isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome, $cognome)) {
 
     $sql = "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
     $result = $conn->query($sql);
     
 
 
-    if($result) {
+    if($result && $result->num_rows > 0) {
 
-        $_SESSION['error'] = 'Nome o email gia esistente';
-        header('Location: ../frontEnd/registrazione.php');
+
+        $_SESSION['errore'] = 'username o email gia esistente';
+       header('Location: ../frontEnd/registrazione.php');
 
     }
 
@@ -71,25 +67,11 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
     $hashPassword = hash("sha256", $password);
 
+    if($id_classe == ""){
 
-    // Controllo che la classe esista
-    $sql = "SELECT id_classe FROM classe WHERE classe = '$classe' AND specialità = '$specialità'";
-    $result = $conn->query($sql);
-
-    
-
-
-    // Se la classe esiste
-    $id_classe = null;
-    if($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $id_classe = $row['id_classe'];
-    } else {
-      
-        $_SESSION['error'] = 'Classe non trovata o Sezione sbagliata';
+        $_SESSION['errore'] = 'Seleziona una classe';
         header('Location: ../frontEnd/registrazione.php');
-    }
-
+    } 
 
 
     // Inserimento dell'utente
@@ -98,19 +80,19 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $classe, $speciali
 
 
     if($result){
-        
+    
     $_SESSION['username'] = $username;
        header('Location: ../index.php');
   
     } else {
 
-        $_SESSION['error'] = 'Errore durante la registrazione';
+        $_SESSION['errore'] = 'Errore durante la registrazione';
         header('Location: ../frontEnd/registrazione.php');
     }
 
 } else {
 
-    $_SESSION['error'] = 'Non sono stati inseriti tutti i campi';
+    $_SESSION['errore'] = 'Non sono stati inseriti tutti i campi';
     header('Location: ../frontEnd/registrazione.php');
 }
 

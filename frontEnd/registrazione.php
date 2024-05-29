@@ -1,3 +1,13 @@
+<?php
+
+include "../backEnd/connessione.php";
+
+
+$sql = "SELECT id_classe, classe, specialità FROM classe ORDER BY classe";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,55 +20,41 @@
 <body>
 
     <div class="container-fluid" id="main">
-
         <div class="row" id="main-row">
-            <div id="sub" class="col  d-none d-md-flex">
-
+            <div id="sub" class="col d-none d-md-flex">
                 <div id="sub-main">
-
                     <h1>Hai già un'account?</h1>
                     <a href="../index.php">
-
                         <button type="button" class="btn btn-primary">Fai Login</button>
-                        
                     </a>
                 </div>
-
             </div>
             <div class="border col" id="main-col">
-
-
-
-                <img id="meucci_logo" class="mt-3"  src="../img/logo---itis-meucci---firenze.png" alt="logo meucci">
-
+                <img id="meucci_logo" class="mt-3" src="../img/logo---itis-meucci---firenze.png" alt="logo meucci">
                 <h1 class="mt-5">Registrazione</h1>
 
-                <form class="mt-5 mb-5  custom-form" action="../backEnd/scriptregistrazione.php" method="post">
+                <form class="mt-5 mb-5 custom-form" action="../backEnd/scriptregistrazione.php" method="post">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="username" placeholder="Username" required>
                     </div>
 
-
-                    <div container-fluid>
+                    <div class="container-fluid">
                         <div class="row">
-
                             <div class="mb-3 col-6">
-                                <input type="text" class="form-control" name="nome" placeholder="nome" required>
+                                <input type="text" class="form-control" name="nome" placeholder="Nome" required>
                             </div>
                             <div class="mb-3 col-6">
-                                <input type="text" class="form-control" name="cognome" placeholder="cognome" required>
+                                <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
                             </div>
-
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required >
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                     </div>
                     
-                    <div container-fluid>
+                    <div class="container-fluid">
                         <div class="row">
-
                             <div class="mb-3 col-6">
                                 <input type="number" class="form-control" name="telefono" placeholder="Telefono" required>
                             </div>
@@ -67,68 +63,41 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="mb-3">
                         <input type="number" class="form-control" name="eta" placeholder="Età" required>
                     </div>
-                    <div container-fluid>
-                        <div class="row">
-                            <div class="mb-3 col-6">
-                                <input type="text" class="form-control" name="classe" placeholder="Classe" required>
-                            </div>
-                            <div class="mb-3 col-6">
-                                <select class="form-select" aria-label="Default select example" name="specialità">
-                                    <option value="Informatica e telecomunicazione" selected>Informatica e telecomunicazione</option>
-                                    <option value="Elettronica e elettrotecnica">Elettronica e elettrotecnica</option>
-                                    <option value="Meccanica">Meccanica</option>
-                                    <option value="Logistica">Logistica</option>
-                                </select>
-                            </div>
-                        </div>
+
+                    <div class="container-fluid mb-3">
+                        <select class="form-select" name="id_classe" required>
+                            <option value="" selected disabled>Seleziona classe</option>
+                            <?php
+                                while($row = $result->fetch_assoc()){
+                                    echo "<option value='" . $row["id_classe"] . "'>" . $row["classe"] . " - " . $row["specialità"] . "</option>";
+                                }
+                            ?>
+                        </select>
                     </div>
                     
                     <button id="button-login" type="submit" class="btn btn-primary mb-5">Registrati</button>
 
                     <?php
-
-                  
                         if(isset($_SESSION["errore"])){
-
-                            
-                            echo "<br><h3 class='text-danger'>errore: " . $_SESSION["errore"] ."</h3>";
-
-
+                            echo "<br><h3 class='text-danger'>Errore: " . $_SESSION["errore"] . "</h3>";
                         }
-
                     ?>
-
-
                 </form>
 
                 <div class="d-block d-md-none">
-
-                    <h1 class="d-inline ">non sei registrato?</h1>
+                    <h1 class="d-inline">Non sei registrato?</h1>
                     <a href="../index.php">
-
                         <button type="button" class="btn btn-primary">Registrati</button>
-                            
                     </a>
                 </div>
-
             </div>
-
-            
-
-            
         </div>
-
-
-
     </div>
 
-    
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-4hsGdz3T13MQ9GF2mUzGrEF3sf7oFXjLyoeP5B5Woa1Q4yMoFKA6LCeWw5Z3z3Zx" crossorigin="anonymous"></script>
 </body>
 </html>

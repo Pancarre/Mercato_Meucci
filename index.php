@@ -38,6 +38,7 @@
 
                             
                             echo "<br><h3 class='text-danger'>errore: " . $_SESSION["errore"] ."</h3>";
+                            unset($_SESSION["errore"]);
 
 
                         }
