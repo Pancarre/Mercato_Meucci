@@ -45,6 +45,7 @@ include "../backEnd/check_session.php";
         }
     } else {
         echo "<p>Non ci sono proposte per questo utente.</p>";
+        echo "<a href='./home.php'>torna a home</a>";
     }
 
     ?>

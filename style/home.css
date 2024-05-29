@@ -1,12 +1,10 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body{
+
     overflow-x: hidden; /* Prevenire lo scroll orizzontale */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
 }
+
 #profilo{
 
     border: 1px black solid;
@@ -15,45 +13,6 @@ body {
     padding-left: 2%;
     height: 100%;
     overflow: auto; /* Nel caso il contenuto del div fisso sia troppo lungo */
-    position: fixed;
-}
-
-#profilo-container{
-    
-    height: 100vh;
-    color: white;
-
-}
-
-#annunci-container{
-    
-    height: 100vh;
-
-
-}
-
-#profilo-row{
-
-    height: 100%;
-
-}
-
-#annunci-row{
-
-    height: 100%;
-
-}
-
-#main{
-
-    overflow-y: auto; /* Permette lo scroll verticale */
-
-}
-
-#filtro{
-
-    max-height: 50px;
-
 }
 
 .profilo-option{
@@ -64,16 +23,23 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
-}
-#profilo-container a{
-
     color: white;
+}
+
+a{
+
     text-decoration: none;
 
 }
 
-#card-container button{
+#annunci-container{
 
-    width: 50%;
+    margin-top: 2000px;
+
+}
+
+.blue{
+
+    background-color: rgb(0, 0, 106);
 
 }

@@ -38,17 +38,18 @@
                         <input type="text" class="form-control" name="username" placeholder="Username" required>
                     </div>
 
-                    <div class="mb-3 col-6">
-                            <input type="email" class="form-control" name="email" placeholder="Email" required>
-                    </div>
 
-                    
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="nome" placeholder="nome" required>
-                    </div>
-                
-                    <div class="mb-3">
-                        <input type="text" class="form-control" name="cognome" placeholder="cognome" required>
+                    <div container-fluid>
+                        <div class="row">
+
+                            <div class="mb-3 col-6">
+                                <input type="text" class="form-control" name="nome" placeholder="nome" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <input type="text" class="form-control" name="cognome" placeholder="cognome" required>
+                            </div>
+
+                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -60,6 +61,9 @@
 
                             <div class="mb-3 col-6">
                                 <input type="number" class="form-control" name="telefono" placeholder="Telefono" required>
+                            </div>
+                            <div class="mb-3 col-6">
+                                <input type="email" class="form-control" name="email" placeholder="Email" required>
                             </div>
                         </div>
                     </div>

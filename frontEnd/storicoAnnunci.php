@@ -20,18 +20,23 @@ include "../backEnd/check_session.php";
     <div class="container-fluid">
 
         <div class="row">
-            <div class="col-1 text-center pt-3 border" id="arrow-back">
-                <a href="./home.php"><span class="material-symbols-outlined">
-                    arrow_back
-                </span></a>
+            <div class="col-1 text-center pt-2 pb-2 border border-5" id="arrow-back">
+                        
+                
+                <a href="./home.php">
+                    
+                    <div id="arrow-back">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                    </div>
+                </a>
+                
             </div>
-
             <div class="col-11" id="blue">
-                <h1>Storico degli annunci</h1>
+                    <h1>Storico degli annunci</h1>
             </div>
         </div>
-
-
     </div>
 
     
