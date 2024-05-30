@@ -7,7 +7,7 @@ include "../backEnd/check_session.php";
 $annuncio_id = isset($_GET['id']) ? intval($_GET['id']) : null;
 
 $sql = 
-"SELECT annuncio.*, utente.username,utente.email,utente.telefono
+"SELECT annuncio.*, utente.username AS utenteUsername,utente.email,utente.telefono
 FROM annuncio 
 JOIN utente ON annuncio.id_utente = utente.id 
 WHERE annuncio.id_annuncio = '$annuncio_id'";
@@ -49,7 +49,7 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
 
  <tr>
    <th>Pubblicato da</th>
-   <td><?php echo $row["username"]; ?></td>
+   <td><?php echo "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["utenteUsername"]  . "</a>" ?></td>
  </tr>
  <tr>
    <th>Data creazione</th>
