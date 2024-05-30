@@ -63,7 +63,7 @@
         <div class="offcanvas-body blue" id="profilo">
           <div class="profilo-option">
               <?php
-                  echo "<p class='mb-0'>User</p><a href='./mostraProfilo.php'>" . $_SESSION["username"] . "</a><br>";
+                  echo "<p class='mb-0'>User</p><a href='./mostraProfilo.php?from=profilo'>" . $_SESSION["username"] . "</a><br>";
               ?>
           </div>
 
@@ -120,7 +120,7 @@
                             $categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 
                             // Seleziona gli annunci che gli utenti hanno pubblicato ad eccezione di quelli di $id
-                            $sql = "SELECT annuncio.*, utente.username FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id'";
+                            $sql = "SELECT annuncio.*, utente.username AS nomeUtente FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id'";
                             
                             if (!empty($categoria_id)) {
                                 $sql .= " AND annuncio.id_categoria = '$categoria_id'";
@@ -144,7 +144,7 @@
                                                             echo "</div>";
                                                             echo "<div class='col-12 col-md-6'>";
                                                                 echo "<h5 class='card-title'>" .  $row["data_creazione"] . "</h5>";
-                                                                echo "<p>" . $row["stato_di_disponibilità"]  . "</p>";
+                                                                echo "<p>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
                                                                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                                                                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
                                                                 echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza'>"; // Aggiunta di una classe Bootstrap al bottone
