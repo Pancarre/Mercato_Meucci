@@ -1,4 +1,4 @@
-<?php
+    <?php
     include "../backEnd/connessione.php";
     include "../backEnd/check_session.php";
 ?>
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../style/home.css">
     <link rel="icon" href="../img/logo---itis-meucci---firenze.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
 </head>
 <body>
     
@@ -29,9 +28,11 @@
                 Meucci
           </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="material-symbols-outlined text-light">
+                arrow_downward
+            </span>
+            </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">

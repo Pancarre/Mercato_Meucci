@@ -79,6 +79,11 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
               echo "<h3 class='text-danger'>" . $_SESSION['errore'] . "</h3>";
               unset($_SESSION["errore"]);
             }
+          else{
+
+            echo "<h3 class='text-success'>proposta inviata con successo</h3>";
+
+          }
         ?>
         <form action="../backEnd/inviaProposta.php" method="post">
             <input type="hidden" name="annuncio_id" value="<?php echo $annuncio_id; ?>">

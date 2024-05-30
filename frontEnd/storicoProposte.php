@@ -61,7 +61,7 @@ include "../backEnd/check_session.php";
         echo "Errore nella query: " . $conn->error;
     } else if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<div class='container-fluid col-4 float-start mt-4'>";
+            echo "<div class='container-fluid col-12 col-md-6 col-lg-4 float-start mt-4'>";
             echo "<div class='card' id='card'>";
             echo "<div class='card-header text-center'><h3>".$row["nome"]."</h3></div>";
             echo "<div class='card-body'>";
@@ -83,7 +83,7 @@ include "../backEnd/check_session.php";
         
         }
     } else {
-        echo "<p class='text-center'>Non ci sono proposte per questo utente.</p>";
+        echo "<p class='text-center mt-5'>Non ci sono proposte per questo utente.</p>";
     }
 
     ?>

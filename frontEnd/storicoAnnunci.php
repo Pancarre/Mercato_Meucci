@@ -108,7 +108,7 @@ include "../backEnd/check_session.php";
             }          
     
         } else {
-            echo "<p>Non ci sono annunci</p>";
+            echo "<p class='text-center mt-5'>Non ci sono Annunci.</p>";
             $_SESSION["error"] = "errore: nessun annuncio trovato";
         }
     } else {
