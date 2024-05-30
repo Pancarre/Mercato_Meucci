@@ -1,18 +1,19 @@
-.image{
-     background-image: url('../img/blue-space-4k-phone-rlz84z3ar9x13g5n.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
 body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; /* Prevenire lo scroll orizzontale */
+    overflow-y: hidden;
+    background-image: url('../img/body.jpg'); /* Sostituisci con il percorso della tua immagine */
+    background-size: cover; /* Adatta l'immagine per coprire tutto lo sfondo */
+    background-repeat: no-repeat; /* Impedisce la ripetizione dell'immagine */
+    background-attachment: fixed; /* Mantiene l'immagine fissa durante lo scorrimento */
+    background-position: center; /* Centra l'immagine di sfondo */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
 }
+
 form {
     
     background-color: #f2f2f2;
@@ -34,8 +35,12 @@ input[type="text"], input[type="file"], select {
     box-sizing: border-box;
 }
 textarea {
-resize: none;
+
+    width: 100%;
+    box-sizing: border-box;
+    resize: none; /* Impedisci il ridimensionamento manuale */
 }
+
 input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -50,14 +55,3 @@ background-color: #45a049;
     #imagePreview {
     margin-bottom: 20px;
 }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100vh;
-            
-}
-    .grid-item {
-    background-color: #f4eded;
-    padding: 20px;
-  }

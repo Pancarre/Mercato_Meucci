@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
         $sql = "INSERT INTO proposta (id_annuncio,id_utente,prezzo_proposto,descrizione) VALUES ('$annuncio_id','$utente_id','$prezzo','$descrizione')";
         
         if($conn->query($sql)) {
+            $_SESSION["report"] = "proposta inviata con successo";
             header("Location: ../frontEnd/dettagliAnnuncio.php?id=" . $annuncio_id);
         } else {
             $_SESSION["errore"] = "errore durante l'inserimento della proposta";

@@ -1,36 +1,13 @@
-#card{
-
-    width: 100%;
-
-
+.container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;    /* Centra verticalmente */
+    height: 100vh;          /* Altezza 100% della finestra del browser */
+    width:200px;
+    height:200px;
+    background:#f60;
+    margin:0 auto;
 }
-#card-body{
-
-    flex-direction: row;
-
-}
-
-.card-btn{
-
-    min-width: 70%;
-
-
-}
-
-#blue{
-
-    background-color: rgb(0, 0, 106);
-    color: white;
-
-}
-
-#arrow-back{
-
-    color: black;
-    background-color: white;
-
-}
-
 body{
 
     overflow-x: hidden; /* Prevenire lo scroll orizzontale */
@@ -75,6 +52,40 @@ a{
 
     background-color: rgb(0, 0, 106);
 
+}
+
+#main{
+    
+
+    margin-top: 64px;
+
+}
+
+#profile-img{
+
+    width:100%;
+
+
+}
+
+table{
+
+    margin-top: 20px;
+
+}
+
+.card{
+
+    height: 200px;
+
+}
+
+#image-div{
+
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;    /* Centra verticalmente */
+    
 }
 .fitted-text {
     font-size: calc(1vw + 1vh); /* Dimensione del testo relativa sia alla larghezza che all'altezza della viewport */

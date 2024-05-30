@@ -25,7 +25,7 @@
         </a>
           <a class="navbar-brand text-light" href="#">
             <img src="../img/logo---itis-meucci---firenze.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Meucci
+                Home
           </a>
 
             <button class="navbar-toggler border-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -103,10 +103,6 @@
 
                 </div>
 
-                <div class="mt-2 col-12 col-lg-6">
-
-                </div>
-
                 <div class="col-12">
 
                     <?php
@@ -133,23 +129,23 @@
                             // Mostra tutti gli annunci
                             if($result->num_rows > 0) {
                                 while($row = $result->fetch_assoc()) {
-                                    echo "<div id='card-container' class='container-fluid col-12 col-sm-6 col-lg-4 float-start mt-4'>";
+                                    echo "<div id='card-container' class='container-fluid col-12 col-md-6 col-lg-4 float-start mt-4'>";
                                         echo "<div class='card' id='card'>";
-                                            echo "<div class='card-header'><h3>".$row["nome"]."</h3></div>";
+                                            echo "<div class='card-header'><h2 class='fitted-text pt-2'>".$row["nome"]."</h2></div>";
                                                 echo "<div class='card-body'>";
                                                     echo "<div class='container-fluid'>";
                                                         echo "<div class='row'>";
-                                                            echo "<div class='col-12 col-md-6'>";
+                                                            echo "<div class='col-6 d-flex justify-content-center align-items-center'>";
                                                                 echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
                                                                 echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                                 echo "</a>";
                                                             echo "</div>";
-                                                            echo "<div class='col-12 col-md-6'>";
+                                                            echo "<div class='col-6'>";
                                                                 echo "<p class='card-title'>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
                                                                 echo "<p>" .  $row["data_creazione"] . "</p>";
                                                                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                                                                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
-                                                                echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza Proposte'>"; // Aggiunta di una classe Bootstrap al bottone
+                                                                echo "<input type='submit' class='btn btn-primary card-btn' value='Proposte'>"; // Aggiunta di una classe Bootstrap al bottone
                                                                 echo "</form>";
                                                             echo "</div>";
                                                         echo "</div>";

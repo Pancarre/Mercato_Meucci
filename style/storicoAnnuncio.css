@@ -30,3 +30,58 @@
     background-color: white;
 
 }
+
+body{
+
+    overflow-x: hidden; /* Prevenire lo scroll orizzontale */
+
+
+}
+
+#profilo{
+
+    border: 1px black solid;
+    background-color: rgb(0, 0, 106);
+    padding-top: 1%;
+    padding-left: 2%;
+    height: 100%;
+    overflow: auto; /* Nel caso il contenuto del div fisso sia troppo lungo */
+}
+
+.profilo-option{
+
+    border: 1px white solid;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: white;
+}
+
+a{
+
+    text-decoration: none;
+
+}
+
+#annunci-container{
+
+    margin-top: 2000px;
+
+}
+
+.blue{
+
+    background-color: rgb(0, 0, 106);
+
+}
+.card{
+
+    height: 200px;
+
+}
+.fitted-text {
+    font-size: calc(1vw + 1vh); /* Dimensione del testo relativa sia alla larghezza che all'altezza della viewport */
+    line-height: 1.2; /* Altezza della linea */
+}

@@ -79,9 +79,10 @@ $from_storico = isset($_GET['from']) && $_GET['from'] === 'storico';
               echo "<h3 class='text-danger'>" . $_SESSION['errore'] . "</h3>";
               unset($_SESSION["errore"]);
             }
-          else{
+          else if(isset($_SESSION["report"])){
 
-            echo "<h3 class='text-success'>proposta inviata con successo</h3>";
+            echo "<h3 class='text-danger'>" . $_SESSION['report'] . "</h3>";
+            unset($_SESSION["report"]);
 
           }
         ?>
