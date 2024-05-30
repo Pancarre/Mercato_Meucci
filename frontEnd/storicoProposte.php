@@ -12,6 +12,7 @@ include "../backEnd/check_session.php";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../style/storicoProposte.css">
+    <link rel="icon" href="../img/logo---itis-meucci---firenze.png" type="image/png">
     <title>Document</title>
 </head>
 <body>
@@ -62,12 +63,12 @@ include "../backEnd/check_session.php";
         while ($row = $result->fetch_assoc()) {
             echo "<div class='container-fluid col-4 float-start mt-4'>";
             echo "<div class='card' id='card'>";
-            echo "<div class='card-header text-center'><h1>".$row["nome"]."</h1></div>";
+            echo "<div class='card-header text-center'><h3>".$row["nome"]."</h3></div>";
             echo "<div class='card-body'>";
 
                         echo "<div >";
                             echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
-                            echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
+                            echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                             echo "</a>";
                         echo "</div>";
                         echo "<div>";
