@@ -11,6 +11,7 @@
     <title>Offcanvas Demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/home.css">
+    <link rel="icon" href="../img/logo---itis-meucci---firenze.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 </head>
@@ -133,13 +134,13 @@
                                 while($row = $result->fetch_assoc()) {
                                     echo "<div id='card-container' class='container-fluid col-12 col-sm-6 col-lg-4 float-start mt-4'>";
                                         echo "<div class='card' id='card'>";
-                                            echo "<div class='card-header'>".$row["nome"]."</div>";
+                                            echo "<div class='card-header'><h3>".$row["nome"]."</h3></div>";
                                                 echo "<div class='card-body'>";
                                                     echo "<div class='container-fluid'>";
                                                         echo "<div class='row'>";
                                                             echo "<div class='col-12 col-md-6'>";
                                                                 echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
-                                                                echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio'>"; // 'img-fluid' per rendere l'immagine reattiva
+                                                                echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                                 echo "</a>";
                                                             echo "</div>";
                                                             echo "<div class='col-12 col-md-6'>";
@@ -147,7 +148,7 @@
                                                                 echo "<p>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
                                                                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                                                                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
-                                                                echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza'>"; // Aggiunta di una classe Bootstrap al bottone
+                                                                echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza Proposte'>"; // Aggiunta di una classe Bootstrap al bottone
                                                                 echo "</form>";
                                                             echo "</div>";
                                                         echo "</div>";
