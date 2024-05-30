@@ -18,8 +18,8 @@ include '../backEnd/connessione.php';
 </head>
 <body>
    
-    <div class="grid-container">
-    <div class="grid-item" id="imag1"></div>
+    <div class="grid-container container-fluid px-0">
+    <div class="grid-item image"></div>
     <div class="grid-item">
     <form method="post" action="../backEnd/scriptInserisciFile.php" enctype="multipart/form-data">
         <label for="titolo">Titolo dell'annuncio:</label>
@@ -56,7 +56,7 @@ include '../backEnd/connessione.php';
 
     
     </div>
-    <div class="grid-item" id="imag3"></div>
+    <div class="grid-item image"></div>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

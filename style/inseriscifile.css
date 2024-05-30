@@ -1,13 +1,4 @@
-#imag1{
-    background-image: url('../img/blue-space-4k-phone-rlz84z3ar9x13g5n.jpg');
-     background-size: cover;
-     background-position: center;
-     height: 100%;
-     margin: 0;
-     padding: 0;
-   }
- 
-    #imag3{
+.image{
      background-image: url('../img/blue-space-4k-phone-rlz84z3ar9x13g5n.jpg');
       background-size: cover;
       background-position: center;

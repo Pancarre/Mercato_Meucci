@@ -145,8 +145,8 @@
                                                                 echo "</a>";
                                                             echo "</div>";
                                                             echo "<div class='col-12 col-md-6'>";
-                                                                echo "<h5 class='card-title'>" .  $row["data_creazione"] . "</h5>";
-                                                                echo "<p>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
+                                                                echo "<p class='card-title'>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
+                                                                echo "<p>" .  $row["data_creazione"] . "</p>";
                                                                 echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
                                                                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
                                                                 echo "<input type='submit' class='btn btn-primary card-btn' value='Visualizza Proposte'>"; // Aggiunta di una classe Bootstrap al bottone
