@@ -39,11 +39,12 @@ $from_profilo = isset($_GET['from']) && $_GET['from'] === 'profilo';
 </head>
 <body>
     <div class="container">
-        <h1>Profilo</h1>
+   
 
         <?php
-            echo "<p>Username: " . $row["username"] . "</p>";
+            echo "<h1>Profilo di " . $row["username"] . "</h1>";
             echo "<img src='" . "../" . $row["immagine_profilo"] . "' width='100px' style='border-radius: 50%;'>";
+            echo "<h2>Dati personali</h2>";
             echo "<p>Nome: " . $row["nome"] . "</p>";
             echo "<p>Cognome: " . $row["cognome"] . "</p>";
             echo "<p>Età: " . $row["eta"] . "</p>";
