@@ -42,8 +42,13 @@ if(isset($_POST['cognome'])) {
 
 
 function isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome, $cognome) {
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $id_classe != null  && $nome != null && $cognome != null) {
-        return true;
+    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $id_classe != null && $nome != null && $cognome != null) {
+        if(strlen($password) >= 8) {
+            return true;
+        } else {
+            $_SESSION['errore'] = 'La password deve essere di almeno 8 caratteri';
+            header('Location: ../frontEnd/registrazione.php');
+        }
     }
     return false;
 }
