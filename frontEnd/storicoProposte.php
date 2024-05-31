@@ -1,7 +1,7 @@
 <?php
 include "../backEnd/connessione.php";
 include "../backEnd/check_session.php";
-
+$_SESSION["pagina_precedente"] = "./storicoProposte.php";
 ?>
 
 <!DOCTYPE html>
@@ -82,9 +82,9 @@ include "../backEnd/check_session.php";
         <div class="container-fluid">
             <div class="row">
 
-                <div class="col-12 text-center">
+                <div class="col-12 text-center" >
 
-                    <h1>Storico Proposte</h1>
+                    <h1 style="padding-top: 80px;">Storico Proposte</h1>
 
                 </div>
 
@@ -118,7 +118,7 @@ include "../backEnd/check_session.php";
                                             echo "<div class='container-fluid '>";
                                             echo "<div class='row'>";
                                                 echo "<div class='col-6 d-flex justify-content-center align-items-center'>";
-                                                    echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
+                                                    echo "<a href='./dettagliAnnuncio.php?id_annuncio=" . $row["id_annuncio"] . "'>";
                                                     echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                     echo "</a>";
                                                 echo "</div>";
@@ -134,7 +134,6 @@ include "../backEnd/check_session.php";
                                             echo "</div>";
                                         echo "</div>";
                                     echo "</div>";
-                                echo "</div>";
                             
                             }
                         } else {

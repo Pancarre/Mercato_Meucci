@@ -1,6 +1,7 @@
 <?php
 include "../backEnd/connessione.php";
 include "../backEnd/check_session.php";
+$_SESSION["pagina_precedente"] = "./mostraProfilo.php";
 
 if(isset($_GET['id'])){
     $id_utente = $_GET['id'];
@@ -18,7 +19,7 @@ if(isset($_GET['id'])){
     }
 }
 
-$sql = "SELECT username, eta, email, telefono, nome, cognome, immagine_profilo, classe.classe, classe.specialità 
+$sql = "SELECT username, datanascita, email, telefono, nome, cognome, immagine_profilo, classe.classe, classe.specialità 
         FROM utente 
         JOIN classe ON utente.id_classe = classe.id_classe 
         WHERE utente.id = '$id_utente'";  
@@ -131,7 +132,7 @@ $from_profilo = isset($_GET['from']) && $_GET['from'] === 'profilo';
             echo "<h2>Dati personali</h2>";
             echo "<table class='table table-sm'><tr><th>Nome:</th><th>Cognome:</th></tr><tr><td>" . $row["nome"] . "</td>";
             echo "<td>" . $row["cognome"] . "</td></tr></table>";
-            echo "<table class='table table-sm'><tr><th>Età:</th><td> " . $row["eta"] . "</td></tr></table>";
+            echo "<table class='table table-sm'><tr><th>Data nascita:</th><td> " . $row["datanascita"] . "</td></tr></table>";
             echo "<table class='table table-sm'><tr><th>Email:</th><th>Numero di telefono:</th></tr><tr><td>" . $row["email"] . "</td>";
             echo "<td> " . $row["telefono"] . "</td></tr></table>";
             echo "<table class='table table-sm'><tr><th>Sezione:</th><th>Specialità:</th></tr><tr><td> " . $row["classe"] . "</td>";

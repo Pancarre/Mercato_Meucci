@@ -1,6 +1,7 @@
 <?php
 include "../backEnd/connessione.php";
 include "../backEnd/check_session.php";
+$_SESSION["pagina_precedente"] = "./storicoAnnunci.php";
 
 ?>
 
@@ -84,7 +85,7 @@ include "../backEnd/check_session.php";
 
                 <div class="col-12 text-center">
 
-                    <h1>Storico Annunci</h1>
+                    <h1 style="padding-top: 80px;">Storico Annunci</h1>
 
                 </div>
 

@@ -32,12 +32,6 @@ a{
 
 }
 
-#annunci-container{
-
-    margin-top: 2000px;
-
-}
-
 .blue{
 
     background-color: rgb(0, 0, 106);
@@ -47,4 +41,10 @@ a{
 .fitted-text {
     font-size: calc(1vw + 1vh); /* Dimensione del testo relativa sia alla larghezza che all'altezza della viewport */
     line-height: 1.2; /* Altezza della linea */
+}
+
+#titolo{
+
+    padding-top: 80px;
+
 }

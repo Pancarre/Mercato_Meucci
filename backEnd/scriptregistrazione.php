@@ -5,7 +5,7 @@ session_start();
 
 $username = null;
 $password = null;
-$eta = null;
+$datanascita = null;
 $email = null;
 $telefono = null;
 $id_classe = null;
@@ -20,8 +20,8 @@ if(isset($_POST['username'])) {
 if(isset($_POST['password'])) {
     $password = $_POST['password'];
 }
-if(isset($_POST['eta'])) {
-    $eta = $_POST['eta'];
+if(isset($_POST['datanascita'])) {
+    $datanascita = $_POST['datanascita'];
 }
 if(isset($_POST['email'])) {
     $email = $_POST['email'];
@@ -41,14 +41,14 @@ if(isset($_POST['cognome'])) {
 
 
 
-function isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome, $cognome) {
-    if($username != null && $password != null && $eta != null && $email != null && $telefono != null && $id_classe != null  && $nome != null && $cognome != null) {
+function isDataValid($username, $password, $datanascita, $email, $telefono, $id_classe, $nome, $cognome) {
+    if($username != null && $password != null && $datanascita != null && $email != null && $telefono != null && $id_classe != null  && $nome != null && $cognome != null) {
         return true;
     }
     return false;
 }
 
-if(isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome, $cognome)) {
+if(isDataValid($username, $password, $datanascita, $email, $telefono, $id_classe, $nome, $cognome)) {
 
     $sql = "SELECT username,email FROM utenti WHERE username = '$username' OR email = '$email'";
     $result = $conn->query($sql);
@@ -75,7 +75,7 @@ if(isDataValid($username, $password, $eta, $email, $telefono, $id_classe, $nome,
 
 
     // Inserimento dell'utente
-    $sql = "INSERT INTO utente(username, password, eta, email, telefono, id_classe, nome, cognome) VALUES ('$username', '$hashPassword', '$eta', '$email', '$telefono', '$id_classe', '$nome', '$cognome')";
+    $sql = "INSERT INTO utente(username, password, datanascita, email, telefono, id_classe, nome, cognome) VALUES ('$username', '$hashPassword', '$datanascita', '$email', '$telefono', '$id_classe', '$nome', '$cognome')";
     $result = $conn->query($sql);
 
 

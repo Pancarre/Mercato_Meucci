@@ -1,7 +1,7 @@
 <?php
 
 include "../backEnd/connessione.php";
-
+session_start();
 
 $sql = "SELECT id_classe, classe, specialità FROM classe ORDER BY classe";
 $result = $conn->query($sql);
@@ -66,7 +66,7 @@ $result = $conn->query($sql);
                     </div>
 
                     <div class="mb-3">
-                        <input type="number" class="form-control" name="eta" placeholder="Età" required>
+                        <input type="date" class="form-control" name="datanascita" required>
                     </div>
 
                     <div class="container-fluid mb-3">
@@ -83,6 +83,7 @@ $result = $conn->query($sql);
                     <button id="button-login" type="submit" class="btn btn-primary mb-5">Registrati</button>
 
                     <?php
+
                         if(isset($_SESSION["errore"])){
                             echo "<br><h3 class='text-danger'>Errore: " . $_SESSION["errore"] . "</h3>";
                             unset($_SESSION["errore"]);

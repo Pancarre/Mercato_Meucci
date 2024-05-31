@@ -1,6 +1,7 @@
     <?php
     include "../backEnd/connessione.php";
     include "../backEnd/check_session.php";
+    $_SESSION["pagina_precedente"] = "./home.php";
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +100,7 @@
 
                 <div class="col-12 text-center">
 
-                    <h1>Annunci degli altri utenti</h1>
+                    <h1 id="titolo">Annunci degli altri utenti</h1>
 
                 </div>
 
@@ -118,7 +119,7 @@
                             $categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : '';
 
                             // Seleziona gli annunci che gli utenti hanno pubblicato ad eccezione di quelli di $id
-                            $sql = "SELECT annuncio.*, utente.username AS nomeUtente FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id'";
+                            $sql = "SELECT annuncio.*, utente.username AS nomeUtente FROM annuncio JOIN utente ON annuncio.id_utente = utente.id WHERE annuncio.id_utente != '$id' AND stato_di_disponibilità = 'Disponibile'";
                             
                             if (!empty($categoria_id)) {
                                 $sql .= " AND annuncio.id_categoria = '$categoria_id'";
@@ -136,14 +137,14 @@
                                                     echo "<div class='container-fluid'>";
                                                         echo "<div class='row'>";
                                                             echo "<div class='col-6 d-flex justify-content-center align-items-center'>";
-                                                                echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "'>";
+                                                                echo "<a href='./dettagliAnnuncio.php?id_annuncio=" . $row["id_annuncio"] . "'>";
                                                                 echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                                 echo "</a>";
                                                             echo "</div>";
                                                             echo "<div class='col-6'>";
                                                                 echo "<p class='card-title'>" . "Creatore: " . "<a href='./mostraProfilo.php?id=" . $row["id_utente"] . "'>" . $row["nomeUtente"]  . "</a>" ."</p>";
                                                                 echo "<p>" .  $row["data_creazione"] . "</p>";
-                                                                echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
+                                                                echo "<form action='./dettagliAnnuncio.php' method='get'>";
                                                                 echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
                                                                 echo "<input type='submit' class='btn btn-primary card-btn' value='Proposte'>"; // Aggiunta di una classe Bootstrap al bottone
                                                                 echo "</form>";

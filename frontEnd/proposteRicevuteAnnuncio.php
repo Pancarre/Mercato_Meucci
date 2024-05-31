@@ -3,6 +3,7 @@
 include "../backEnd/connessione.php";
 include "../backEnd/check_session.php";
 
+$username = $_SESSION['username'];
 
 $annuncio_id = isset($_GET['id_annuncio']) ? intval($_GET['id_annuncio']) : 0;
 
@@ -27,7 +28,7 @@ if($result->num_rows > 0) {
         echo "<p>Stato della proposta: " . $row["nome"] . "</p>";
 
         // Form per accettare la proposta
-        if($row["id_stato"] == 1 ){
+        if($row["id_stato"] == 1  && $username == $row["username"]){
             echo "<form action='../backEnd/accettaProposta.php' method='post'>";
             echo "<input type='hidden' name='id_proposta' value='" . $row["id"] . "'>";
             echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
@@ -37,7 +38,7 @@ if($result->num_rows > 0) {
             echo "<button value='accetta' disabled>Accetta</button>";
         }
         // Form per rifiutare la proposta
-        if($row["id_stato"] == 1){
+        if($row["id_stato"] == 1 && $username == $row["username"]){
         echo "<form action='../backEnd/rifiutaProposta.php' method='post'>";
         echo "<input type='hidden' name='id_proposta' value='" . $row["id"] . "'>";
         echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
