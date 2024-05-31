@@ -100,13 +100,3 @@ CREATE TABLE proposta (
     FOREIGN KEY (id_stato) REFERENCES stato(id)
 );
 
--- Creazione della tabella commenti
-CREATE TABLE commenti (
-    id_commenti INT PRIMARY KEY AUTO_INCREMENT,
-    titolo VARCHAR(100),
-    testo TEXT,
-    id_utente INT,
-    id_annuncio INT,
-    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE SET NULL,
-    FOREIGN KEY (id_annuncio) REFERENCES annuncio(id_annuncio) ON DELETE CASCADE
-);
