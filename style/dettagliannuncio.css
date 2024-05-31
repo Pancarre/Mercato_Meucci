@@ -1,39 +1,19 @@
 
-#imag1 {
-    background-image: url('../img/body.jpg');
-     background-size: cover;
-     background-position: center;
-     height: 100%;
-     margin: 0;
-     padding: 0;
-   }
- 
-    #imag3{
-     background-image: url('../img/body.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-   body{
+body{
  
      background-size: cover;
      background-position: center;
      height: 100%;
      margin: 0;
      padding: 0;
-   }
+}
  
-  html {
+html{
      height: 100%;
      margin: 0;
      padding: 0;
-   }
- body {
-   text-align: center;
- }
- 
+}
+
  table {
    margin: 0 auto;
    font-family: arial, sans-serif;
@@ -50,31 +30,47 @@
  tr:nth-child(even) {
    background-color: #dddddd;
  }
- 
- img {
-   width: 400px;
-   height: auto;
-   margin: 20px;
-   border: 1px solid #ddd;
-   border-radius: 10px;
- }
- 
- h2 {
-   margin-top: 0;
- }
- label {
-     margin-bottom: 10px;
-     display: inline-block;
-     width: 120px;
-     text-align:right;
- }
- .grid-container {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   height: 100vh;
-   
- }
- .grid-item {
-   background-color: #f4eded;
-   padding: 20px;
- }
+ body{
+
+  overflow-x: hidden; /* Prevenire lo scroll orizzontale */
+
+
+}
+
+#profilo{
+
+  border: 1px black solid;
+  background-color: rgb(0, 0, 106);
+  padding-top: 1%;
+  padding-left: 2%;
+  height: 100%;
+  overflow: auto; /* Nel caso il contenuto del div fisso sia troppo lungo */
+}
+
+.profilo-option{
+
+  border: 1px white solid;
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  color: white;
+}
+
+a{
+
+  text-decoration: none;
+
+}
+
+.blue{
+
+  background-color: rgb(0, 0, 106);
+
+}
+#main{
+
+  margin-top: 64px;
+
+}

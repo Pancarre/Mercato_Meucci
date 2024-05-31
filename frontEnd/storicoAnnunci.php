@@ -116,7 +116,7 @@ $_SESSION["pagina_precedente"] = "./storicoAnnunci.php";
                                                 echo "<div class='container-fluid'>";
                                                     echo "<div class='row'>";
                                                         echo "<div class='col-6 d-flex justify-content-center align-items-center'>";
-                                                            echo "<a href='./dettagliAnnuncio.php?id=" . $row["id_annuncio"] . "&from=storico'>";
+                                                            echo "<a href='./dettagliAnnuncio.php?id_annuncio=" . $row["id_annuncio"] . "&from=storico'>";
                                                             echo "<img src='" . $row["image"] . "' class='img-fluid' alt='immagine annuncio' width='75px'>"; // 'img-fluid' per rendere l'immagine reattiva
                                                             echo "</a>";
                                                         echo "</div>";
@@ -136,8 +136,9 @@ $_SESSION["pagina_precedente"] = "./storicoAnnunci.php";
                                                             echo "<div class='container-fluid'>";
                                                                 echo "<div class='row'>";
                                                                     echo "<div class='col-6'>";
-                                                                        echo "<form action='./proposteRicevuteAnnuncio.php' method='get'>";
+                                                                        echo "<form action='./dettagliAnnuncio.php?id_annuncio=" . $row["id_annuncio"] . "&from=storico' method='get'>";
                                                                         echo "<input type='hidden' name='id_annuncio' value='" . $row["id_annuncio"] . "'>";
+                                                                        echo "<input type='hidden' name='from' value='storico'>";
                                                                         echo "<input type='submit' class='btn btn-primary card-btn' value='proposte'>"; // Aggiunta di una classe Bootstrap al bottone
                                                                         echo "</form>";
                                                                     echo "</div>";
