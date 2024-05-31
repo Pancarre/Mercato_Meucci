@@ -57,9 +57,9 @@ CREATE TABLE utente (
     nome VARCHAR(50),
     cognome VARCHAR(50),
     immagine_profilo VARCHAR(255) DEFAULT 'uploads/immagineprofilodefault.png',
-    PRIMARY KEY (email),
+    PRIMARY KEY (id),
     FOREIGN KEY (id_classe) REFERENCES classe(id_classe),
-    UNIQUE (id)  
+    UNIQUE (email)  
 );
 
 
@@ -100,13 +100,3 @@ CREATE TABLE proposta (
     FOREIGN KEY (id_stato) REFERENCES stato(id)
 );
 
--- Creazione della tabella commenti
-CREATE TABLE commenti (
-    id_commenti INT PRIMARY KEY AUTO_INCREMENT,
-    titolo VARCHAR(100),
-    testo TEXT,
-    id_utente INT,
-    id_annuncio INT,
-    FOREIGN KEY (id_utente) REFERENCES utente(id) ON DELETE SET NULL,
-    FOREIGN KEY (id_annuncio) REFERENCES annuncio(id_annuncio) ON DELETE CASCADE
-);
