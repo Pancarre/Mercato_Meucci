@@ -57,9 +57,9 @@ CREATE TABLE utente (
     nome VARCHAR(50),
     cognome VARCHAR(50),
     immagine_profilo VARCHAR(255) DEFAULT 'uploads/immagineprofilodefault.png',
-    PRIMARY KEY (email),
+    PRIMARY KEY (id),
     FOREIGN KEY (id_classe) REFERENCES classe(id_classe),
-    UNIQUE (id)  
+    UNIQUE (email)  
 );
 
 
